@@ -1,57 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JRay Creative & Services | Home</title>
-    <!-- AOS Library for Animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        :root { --accent: #f97316; --bg: #0f172a; --text: #f8fafc; }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+        /* Modern Ad-Revenue Layout */
+        :root { --neon: #00f2ff; --bg: #050505; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
-        /* Hero Section */
-        .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero h1 { font-size: 5rem; margin: 0; color: var(--accent); text-transform: uppercase; }
+        /* Animated Background */
+        .glow { position: fixed; width: 100vw; height: 100vh; background: radial-gradient(circle at 50% 50%, #1a1a1a, #000); z-index: -1; }
         
-        /* Business Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; padding: 50px; max-width: 1200px; margin: auto; }
-        .card { background: #1e293b; padding: 40px; border-radius: 20px; text-align: center; border: 1px solid #334155; }
-        .card h3 { color: var(--accent); font-size: 1.8rem; }
+        .header { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .header h1 { font-size: 4rem; text-transform: uppercase; letter-spacing: 5px; animation: glitch 3s infinite; }
         
-        /* Buttons */
-        .btn { padding: 15px 30px; background: var(--accent); color: white; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(249, 115, 22, 0.4); }
+        /* The Ad-Grid */
+        .content-stream { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; padding: 40px; }
+        .ad-card { border: 1px solid #222; padding: 20px; transition: 0.5s; background: rgba(255,255,255,0.03); }
+        .ad-card:hover { border-color: var(--neon); box-shadow: 0 0 20px rgba(0,242,255,0.2); }
+
+        @keyframes glitch { 0%{opacity:1;} 50%{opacity:0.8; transform:scale(1.01);} }
     </style>
 </head>
 <body>
-
-    <!-- Hero -->
-    <section class="hero" data-aos="fade-up">
-        <h1>JRAY</h1>
-        <p>THE GHOST WRITER STUDIO</p>
-        <br>
-        <a href="#services" class="btn">DISCOVER THE WORK</a>
+    <div class="glow"></div>
+    <section class="header">
+        <h1>THE INSIDER FEED</h1>
+        <p>Curated insights, trends, and breakthroughs.</p>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="grid">
-        <div class="card" data-aos="flip-left" data-aos-delay="200">
-            <h3>Iron Mane Finishes</h3>
-            <p>Master-level craftsmanship in painting and structural finishing.</p>
-        </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="400">
-            <h3>Cosmic Scoopers</h3>
-            <p>Professional, reliable, and premium pet waste management services.</p>
-        </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="600">
-            <h3>Creative Arts</h3>
-            <p>Original songwriting, lyricism, and branding for the modern creator.</p>
-        </div>
-    </section>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <div class="content-stream">
+        <!-- Ad placeholders to build around -->
+        <div class="ad-card"><h3>Market Trends</h3><p>Real-time analytics for the modern industry.</p></div>
+        <div class="ad-card"><h3>Tech Spotlight</h3><p>Innovation highlights that drive the future.</p></div>
+        <div class="ad-card"><h3>Growth Strategy</h3><p>Maximizing revenue through digital velocity.</p></div>
+    </div>
 </body>
 </html>
