@@ -1,71 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorkForge</title>
-<meta name="description" content="Stop Applying. Start Working.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#050816;--p:#00E5FF;--s:#6C63FF;--g:#00FF95;--card:rgba(255,255,255,.05)}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;background:var(--bg);color:#fff}
-nav{position:fixed;top:0;width:100%;padding:20px 6%;display:flex;justify-content:space-between;background:rgba(5,8,22,.8);backdrop-filter:blur(12px)}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 6%}
-.hero h1{font-size:clamp(3rem,8vw,7rem);background:linear-gradient(90deg,#fff,var(--p),var(--s));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.btn{display:inline-block;padding:16px 28px;border-radius:999px;background:linear-gradient(135deg,var(--p),var(--s));color:#fff;text-decoration:none;font-weight:700}
-section{padding:90px 6%}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
-.card{background:var(--card);padding:24px;border-radius:20px}
-input,textarea{width:100%;padding:14px;margin:8px 0}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkForge | On-Demand Workforce Marketplace</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#030712; --accent:#00E5FF; --white:#ffffff; --gray:#94a3b8; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Plus Jakarta Sans', sans-serif; }
+        body { background:var(--bg); color:var(--white); line-height:1.6; overflow-x:hidden; }
+        
+        /* Navigation */
+        nav { padding:25px 8%; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100; backdrop-filter:blur(10px); }
+        .logo { font-size:1.5rem; font-weight:800; letter-spacing:-1px; }
+        .nav-links { display:flex; gap:30px; font-weight:600; font-size:0.9rem; }
+        
+        /* Hero */
+        .hero { padding:150px 8% 100px; text-align:center; }
+        .hero h1 { font-size:clamp(3rem, 12vw, 5.5rem); line-height:1; margin-bottom:20px; background:linear-gradient(to bottom, #fff, #94a3b8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .hero p { font-size:1.25rem; color:var(--gray); max-width:600px; margin:0 auto 40px; }
+        
+        /* Buttons */
+        .btn { padding:16px 32px; border-radius:12px; font-weight:600; text-decoration:none; display:inline-block; transition:0.3s; }
+        .btn-primary { background:var(--accent); color:var(--bg); border:none; }
+        .btn-primary:hover { transform:translateY(-3px); box-shadow:0 10px 25px rgba(0,229,255,0.3); }
+
+        /* Trust Section */
+        .stats { display:flex; justify-content:center; gap:60px; padding:60px 0; border-top:1px solid #1e293b; margin-top:50px; }
+        .stat-item { text-align:center; }
+        .stat-item h3 { font-size:2rem; }
+
+        /* Form Styling */
+        .cta-box { background:rgba(255,255,255,0.03); padding:60px; border-radius:30px; border:1px solid #1e293b; max-width:800px; margin:100px auto; text-align:center; }
+        input { background:#0f172a; border:1px solid #334155; padding:20px; width:100%; max-width:400px; border-radius:12px; color:white; font-size:1rem; margin-bottom:20px; display:block; margin-left:auto; margin-right:auto; }
+
+        @media (max-width:768px) { .nav-links { display:none; } }
+    </style>
 </head>
 <body>
-<nav><strong>WORKFORGE</strong><a class="btn" href="#signup">Get Started</a></nav>
 
-<section class="hero">
-<div>
-<h1>Stop Applying.<br>Start Working.</h1>
-<p>Connect workers and employers instantly.</p>
-<a class="btn" href="#workers">Find Work</a>
-<a class="btn" href="#employers">Hire Workers</a>
-</div>
-</section>
+    <nav>
+        <div class="logo">WORKFORGE</div>
+        <div class="nav-links"><a>How it works</a><a>Security</a><a>Pricing</a></div>
+        <a href="#join" class="btn btn-primary">Join Waitlist</a>
+    </nav>
 
-<section>
-<h2>Why WorkForge</h2>
-<div class="grid">
-<div class="card"><h3>ForgeMatch AI</h3><p>Instant matching.</p></div>
-<div class="card"><h3>ForgeScore</h3><p>Trust system.</p></div>
-<div class="card"><h3>ForgePay</h3><p>Payments.</p></div>
-<div class="card"><h3>ForgeShield</h3><p>Verification.</p></div>
-</div>
-</section>
+    <header class="hero">
+        <h1 id="fade-in">Stop Applying.<br>Start Working.</h1>
+        <p>The marketplace connecting vetted professionals with high-growth businesses. No resumes. No games. Just results.</p>
+        <a href="#join" class="btn btn-primary">Get Early Access</a>
+    </header>
 
-<section id="workers">
-<h2>Worker Registration</h2>
-<form>
-<input placeholder="Name">
-<input placeholder="Email">
-<input placeholder="Phone">
-<textarea placeholder="Skills"></textarea>
-</form>
-</section>
+    <div class="stats">
+        <div class="stat-item"><h3>10k+</h3><p>Active Workers</p></div>
+        <div class="stat-item"><h3>$2M+</h3><p>Paid to Pros</p></div>
+        <div class="stat-item"><h3>4.9/5</h3><p>Trust Rating</p></div>
+    </div>
 
-<section id="employers">
-<h2>Employer Registration</h2>
-<form>
-<input placeholder="Company">
-<input placeholder="Email">
-<textarea placeholder="Job Description"></textarea>
-</form>
-</section>
+    <section id="join" class="cta-box">
+        <h2>Ready to join the future of work?</h2>
+        <p style="margin-bottom:30px">Enter your email to get early access for our 2026 launch.</p>
+        <form>
+            <input type="email" placeholder="Enter your business or work email" required>
+            <button type="submit" class="btn btn-primary">Join WorkForge</button>
+        </form>
+    </section>
 
-<section id="signup">
-<h2>Get Started</h2>
-<p>Launch WorkForge today.</p>
-</section>
-
-<footer style="padding:50px;text-align:center">Â© WorkForge</footer>
+    <script>
+        gsap.from("h1", {duration: 1.5, opacity: 0, y: 50, ease: "power4.out"});
+        gsap.from(".stat-item", {duration: 1, opacity: 0, y: 30, stagger: 0.2, delay: 0.5});
+    </script>
 </body>
 </html>
