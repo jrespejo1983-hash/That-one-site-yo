@@ -7,74 +7,51 @@
     <style>
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #050505; color: white; font-family: 'Inter', sans-serif; overflow: hidden; }
         canvas { display: block; position: absolute; top: 0; left: 0; z-index: 1; }
-        
-        #ui-layer {
-            position: relative; z-index: 10; height: 100vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; pointer-events: none;
-        }
-        
-        h1 { font-weight: 200; font-size: 4rem; letter-spacing: 1.2em; margin: 0; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
-        .description { margin-top: 20px; letter-spacing: 0.3em; font-size: 0.8rem; opacity: 0.6; }
-        
-        .controls { margin-top: 50px; pointer-events: auto; display: flex; gap: 20px; }
-        button, a { 
-            background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white;
-            padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2em;
-            cursor: pointer; transition: 0.4s; font-size: 0.7rem; text-decoration: none;
-        }
-        button:hover, a:hover { background: white; color: black; }
+        #ui { position: relative; z-index: 10; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        h1 { font-weight: 200; font-size: 3rem; letter-spacing: 0.8em; margin: 0; cursor: default; }
+        .menu { margin-top: 40px; display: flex; gap: 20px; }
+        a { border: 1px solid rgba(255,255,255,0.2); padding: 12px 24px; color: white; text-decoration: none; text-transform: uppercase; font-size: 0.6rem; letter-spacing: 0.3em; transition: 0.3s; }
+        a:hover { background: white; color: black; }
     </style>
 </head>
 <body>
 
-    <div id="ui-layer">
+    <div id="ui">
         <h1>A E T H E R I S</h1>
-        <p class="description">TRANSCENDENCE THROUGH INTENT</p>
-        
-        <div class="controls">
-            <button onclick="toggleAudio()">Enter Sanctuary</button>
-            <a href="https://buy.stripe.com/your-payment-link-here">Support the Flow</a>
+        <div class="menu">
+            <a href="#" id="audio-btn">Initialize Audio</a>
+            <a href="https://buy.stripe.com/your-payment-link-here" target="_blank">Support the Flow</a>
         </div>
     </div>
 
     <canvas id="canvas"></canvas>
 
-    <!-- Audio Element -->
-    <audio id="audio" loop>
-        <source src="your-music-url.mp3" type="audio/mpeg">
-    </audio>
-
     <script>
-        // Kinetic Art Logic
+        // Setup Canvas
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
-        let particles = [];
-        
-        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-        window.onresize = resize;
-        resize();
+        let w, h;
+        function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+        window.onresize = resize; resize();
 
-        class Particle {
-            constructor() { this.reset(); }
-            reset() { this.x = Math.random()*window.innerWidth; this.y = Math.random()*window.innerHeight; this.v = Math.random()*0.5; }
-            update() { this.y -= this.v; if(this.y < 0) this.y = window.innerHeight; }
-            draw() { ctx.fillStyle = 'rgba(255,255,255,0.1)'; ctx.fillRect(this.x, this.y, 1, Math.random()*20); }
-        }
-
-        for(let i=0; i<150; i++) particles.push(new Particle());
-        
+        // Animation
         function animate() {
-            ctx.fillStyle = '#050505'; ctx.fillRect(0,0,canvas.width,canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
+            ctx.fillStyle = 'rgba(5,5,5,0.08)';
+            ctx.fillRect(0,0,w,h);
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.beginPath();
+            ctx.arc(w/2, h/2, Math.sin(Date.now()/1000)*100 + 150, 0, Math.PI*2);
+            ctx.stroke();
             requestAnimationFrame(animate);
         }
         animate();
 
-        // Audio Logic
-        function toggleAudio() {
-            const audio = document.getElementById('audio');
-            audio.paused ? audio.play() : audio.pause();
-        }
+        // Audio Handler
+        const btn = document.getElementById('audio-btn');
+        btn.onclick = (e) => {
+            e.preventDefault();
+            alert("To host your music, upload your file to your GitHub repo and link it here.");
+        };
     </script>
 </body>
 </html>
