@@ -2,56 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A E T H E R I S | Digital Sanctuary</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #050505; color: white; font-family: 'Inter', sans-serif; overflow: hidden; }
-        canvas { display: block; position: absolute; top: 0; left: 0; z-index: 1; }
-        #ui { position: relative; z-index: 10; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        h1 { font-weight: 200; font-size: 3rem; letter-spacing: 0.8em; margin: 0; cursor: default; }
-        .menu { margin-top: 40px; display: flex; gap: 20px; }
-        a { border: 1px solid rgba(255,255,255,0.2); padding: 12px 24px; color: white; text-decoration: none; text-transform: uppercase; font-size: 0.6rem; letter-spacing: 0.3em; transition: 0.3s; }
-        a:hover { background: white; color: black; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap');
+        body, html { margin: 0; background: #050505; color: #fff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        /* Sections */
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px; }
+        h2 { font-weight: 200; letter-spacing: 0.5em; text-transform: uppercase; margin-bottom: 30px; }
+        p { max-width: 600px; text-align: center; line-height: 1.8; opacity: 0.7; font-size: 0.9rem; }
+        
+        /* Canvas Background */
+        canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+        
+        /* Navigation/Buttons */
+        .btn { padding: 15px 40px; border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.6rem; letter-spacing: 0.2em; transition: 0.4s; }
+        .btn:hover { background: #fff; color: #000; }
     </style>
 </head>
 <body>
 
-    <div id="ui">
-        <h1>A E T H E R I S</h1>
-        <div class="menu">
-            <a href="#" id="audio-btn">Initialize Audio</a>
-            <a href="https://buy.stripe.com/your-payment-link-here" target="_blank">Support the Flow</a>
-        </div>
-    </div>
-
     <canvas id="canvas"></canvas>
 
+    <!-- SECTION 1: HERO -->
+    <section>
+        <h1 style="font-weight: 200; font-size: 4rem; letter-spacing: 1.2em;">A E T H E R I S</h1>
+        <p>TRANSCENDENCE THROUGH INTENT</p>
+        <div style="margin-top: 50px; display: flex; gap: 20px;">
+            <button class="btn" onclick="document.getElementById('about').scrollIntoView()">Explore</button>
+            <a href="https://buy.stripe.com/your-payment-link" class="btn" target="_blank">Support</a>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT -->
+    <section id="about">
+        <h2>The Philosophy</h2>
+        <p>AETHERIS is a digital sanctuary designed for the modern creator. It bridges the gap between chaotic information and curated art, providing a space for focus, silence, and creative resonance. Every element is handcrafted to ensure that your experience remains undisturbed by the noise of the digital world.</p>
+    </section>
+
+    <!-- SECTION 3: CONTACT -->
+    <section>
+        <h2>Connect</h2>
+        <p>Your contribution keeps this sanctuary open and ad-free. If you find value in this space, support the flow to sustain the development of future kinetic experiences.</p>
+        <a href="mailto:your@email.com" class="btn" style="margin-top: 30px;">Inquiries</a>
+    </section>
+
     <script>
-        // Setup Canvas
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         let w, h;
-        function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
-        window.onresize = resize; resize();
-
-        // Animation
-        function animate() {
-            ctx.fillStyle = 'rgba(5,5,5,0.08)';
-            ctx.fillRect(0,0,w,h);
-            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-            ctx.beginPath();
-            ctx.arc(w/2, h/2, Math.sin(Date.now()/1000)*100 + 150, 0, Math.PI*2);
-            ctx.stroke();
-            requestAnimationFrame(animate);
+        function init() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+        window.onresize = init; init();
+        let particles = Array.from({length: 100}, () => ({x: Math.random()*w, y: Math.random()*h, r: Math.random()*2, v: Math.random()*0.5}));
+        function draw() {
+            ctx.fillStyle = 'rgba(5,5,5,0.1)'; ctx.fillRect(0,0,w,h);
+            ctx.fillStyle = 'rgba(255,255,255,0.2)';
+            particles.forEach(p => { p.y -= p.v; if(p.y < 0) p.y = h; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill(); });
+            requestAnimationFrame(draw);
         }
-        animate();
-
-        // Audio Handler
-        const btn = document.getElementById('audio-btn');
-        btn.onclick = (e) => {
-            e.preventDefault();
-            alert("To host your music, upload your file to your GitHub repo and link it here.");
-        };
+        draw();
     </script>
 </body>
 </html>
