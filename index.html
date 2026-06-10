@@ -2,34 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>S U B L I M E</title>
+    <title>A E T H E R I S</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #0a0a0a; overflow: hidden; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #050505; overflow: hidden; font-family: 'Inter', sans-serif; }
         canvas { display: block; }
         
         #overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            pointer-events: none;
-            color: rgba(255, 255, 255, 0.7);
-            font-family: 'Helvetica Neue', sans-serif;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            pointer-events: none; color: white; text-align: center;
         }
-        h1 { font-weight: 200; font-size: 2rem; margin: 0; }
-        p { font-size: 0.8rem; opacity: 0.5; margin-top: 20px; }
+        h1 { font-weight: 200; font-size: 3rem; letter-spacing: 0.8em; margin: 0; }
+        .cta { 
+            pointer-events: auto; margin-top: 40px; padding: 12px 30px; 
+            border: 1px solid rgba(255,255,255,0.3); color: white; 
+            text-decoration: none; text-transform: uppercase; letter-spacing: 0.2em;
+            transition: 0.3s; font-size: 0.7rem; background: transparent; cursor: pointer;
+        }
+        .cta:hover { background: white; color: black; }
     </style>
 </head>
 <body>
 
     <div id="overlay">
-        <h1>S U B L I M E</h1>
-        <p>Interaction creates equilibrium</p>
+        <h1>A E T H E R I S</h1>
+        <!-- REPLACE THIS HREF WITH YOUR STRIPE PAYMENT LINK -->
+        <a href="https://buy.stripe.com/your-unique-link-here" class="cta">Support the Flow</a>
     </div>
+    
     <canvas id="canvas"></canvas>
 
     <script>
@@ -45,33 +45,30 @@
         class Particle {
             constructor() { this.reset(); }
             reset() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = Math.random() * 2 - 1;
-                this.vy = Math.random() * 2 - 1;
-                this.radius = Math.random() * 2 + 1;
+                this.x = Math.random() * width; this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5;
+                this.alpha = Math.random();
             }
             update() {
-                this.x += this.vx;
-                this.y += this.vy;
+                this.x += this.vx; this.y += this.vy;
                 if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
             }
             draw() {
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                ctx.arc(this.x, this.y, 1, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
                 ctx.fill();
             }
         }
 
         function init() {
             resize();
-            for (let i = 0; i < 100; i++) particles.push(new Particle());
+            for (let i = 0; i < 200; i++) particles.push(new Particle());
             animate();
         }
 
         function animate() {
-            ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
+            ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
             ctx.fillRect(0, 0, width, height);
             particles.forEach(p => { p.update(); p.draw(); });
             requestAnimationFrame(animate);
