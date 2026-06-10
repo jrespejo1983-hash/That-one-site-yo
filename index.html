@@ -3,117 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorkForge - Stop Applying. Start Working.</title>
+<title>WorkForge</title>
+<meta name="description" content="Stop Applying. Start Working.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{
---bg:#050816;--card:rgba(255,255,255,.05);--border:rgba(255,255,255,.08);
---primary:#00E5FF;--secondary:#6C63FF;--success:#00FF95;
-}
+:root{--bg:#050816;--p:#00E5FF;--s:#6C63FF;--g:#00FF95;--card:rgba(255,255,255,.05)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;background:var(--bg);color:#fff;overflow-x:hidden}
-html{scroll-behavior:smooth}
-.aurora{position:fixed;inset:0;z-index:-2;background:
-radial-gradient(circle at 20% 20%,rgba(0,229,255,.2),transparent 35%),
-radial-gradient(circle at 80% 40%,rgba(108,99,255,.2),transparent 35%),
-radial-gradient(circle at 50% 80%,rgba(0,255,149,.1),transparent 40%);
-filter:blur(40px)}
-nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 6%;background:rgba(5,8,22,.7);backdrop-filter:blur(15px);z-index:1000}
-.logo{font-size:1.7rem;font-weight:900;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.menu{display:flex;gap:24px}
-.menu a,.btn{color:white;text-decoration:none}
-.btn{padding:14px 24px;border-radius:999px;background:linear-gradient(135deg,var(--primary),var(--secondary));font-weight:700}
+body{font-family:Inter,sans-serif;background:var(--bg);color:#fff}
+nav{position:fixed;top:0;width:100%;padding:20px 6%;display:flex;justify-content:space-between;background:rgba(5,8,22,.8);backdrop-filter:blur(12px)}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 6%}
-.hero h1{font-size:clamp(3rem,8vw,7rem);line-height:.95;background:linear-gradient(90deg,#fff,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{max-width:800px;margin:25px auto;color:#cbd5e1;font-size:1.2rem}
+.hero h1{font-size:clamp(3rem,8vw,7rem);background:linear-gradient(90deg,#fff,var(--p),var(--s));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.btn{display:inline-block;padding:16px 28px;border-radius:999px;background:linear-gradient(135deg,var(--p),var(--s));color:#fff;text-decoration:none;font-weight:700}
 section{padding:90px 6%}
-h2{text-align:center;font-size:2.5rem;margin-bottom:40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-.card{background:var(--card);border:1px solid var(--border);padding:28px;border-radius:22px}
-input,textarea,select{width:100%;padding:14px;margin:8px 0;border-radius:12px;border:1px solid #334155;background:#0f172a;color:#fff}
-form{max-width:700px;margin:auto}
-footer{text-align:center;padding:60px;color:#94a3b8}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.card{background:var(--card);padding:24px;border-radius:20px}
+input,textarea{width:100%;padding:14px;margin:8px 0}
 </style>
 </head>
 <body>
-<div class="aurora"></div>
-
-<nav>
-<div class="logo">WORKFORGE</div>
-<div class="menu">
-<a href="#features">Features</a>
-<a href="#jobs">Jobs</a>
-<a href="#workers">Workers</a>
-<a href="#pricing">Pricing</a>
-</div>
-<a class="btn" href="#register">Get Started</a>
-</nav>
+<nav><strong>WORKFORGE</strong><a class="btn" href="#signup">Get Started</a></nav>
 
 <section class="hero">
 <div>
 <h1>Stop Applying.<br>Start Working.</h1>
-<p>Connect workers and employers instantly through a modern staffing marketplace.</p>
-<a class="btn" href="#register">Join WorkForge</a>
+<p>Connect workers and employers instantly.</p>
+<a class="btn" href="#workers">Find Work</a>
+<a class="btn" href="#employers">Hire Workers</a>
 </div>
 </section>
 
-<section id="features">
-<h2>Platform Features</h2>
+<section>
+<h2>Why WorkForge</h2>
 <div class="grid">
-<div class="card"><h3>ForgeMatch AI</h3><p>Intelligent matching system.</p></div>
-<div class="card"><h3>ForgeScore</h3><p>Worker reputation engine.</p></div>
-<div class="card"><h3>ForgePay</h3><p>Integrated payments.</p></div>
-<div class="card"><h3>ForgeShield</h3><p>Verification and trust.</p></div>
-</div>
-</section>
-
-<section id="jobs">
-<h2>Live Opportunities</h2>
-<div class="grid">
-<div class="card">Warehouse Worker - $180/day</div>
-<div class="card">Landscaper - $220/day</div>
-<div class="card">Mover - $150/day</div>
-<div class="card">Electrician - $350/day</div>
+<div class="card"><h3>ForgeMatch AI</h3><p>Instant matching.</p></div>
+<div class="card"><h3>ForgeScore</h3><p>Trust system.</p></div>
+<div class="card"><h3>ForgePay</h3><p>Payments.</p></div>
+<div class="card"><h3>ForgeShield</h3><p>Verification.</p></div>
 </div>
 </section>
 
 <section id="workers">
 <h2>Worker Registration</h2>
 <form>
-<input placeholder="Full Name">
+<input placeholder="Name">
 <input placeholder="Email">
 <input placeholder="Phone">
-<select><option>Primary Skill</option></select>
-<textarea placeholder="Experience"></textarea>
-<a class="btn" href="#">Create Profile</a>
+<textarea placeholder="Skills"></textarea>
 </form>
 </section>
 
 <section id="employers">
 <h2>Employer Registration</h2>
 <form>
-<input placeholder="Company Name">
-<input placeholder="Contact Name">
+<input placeholder="Company">
 <input placeholder="Email">
 <textarea placeholder="Job Description"></textarea>
-<a class="btn" href="#">Post Job</a>
 </form>
 </section>
 
-<section id="pricing">
-<h2>Pricing</h2>
-<div class="grid">
-<div class="card"><h3>Starter</h3><h1>$29</h1></div>
-<div class="card"><h3>Business Pro</h3><h1>$99</h1></div>
-<div class="card"><h3>Enterprise</h3><h1>$299</h1></div>
-</div>
+<section id="signup">
+<h2>Get Started</h2>
+<p>Launch WorkForge today.</p>
 </section>
 
-<section id="register">
-<h2>Ready To Build Your Workforce?</h2>
-<form><input placeholder="Email"><a class="btn" href="#">Get Early Access</a></form>
-</section>
-
-<footer>Â© 2026 WorkForge</footer>
+<footer style="padding:50px;text-align:center">Â© WorkForge</footer>
 </body>
 </html>
