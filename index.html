@@ -2,80 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>A E T H E R I S</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A E T H E R I S | Digital Sanctuary</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #050505; overflow: hidden; font-family: 'Inter', sans-serif; }
-        canvas { display: block; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #050505; color: white; font-family: 'Inter', sans-serif; overflow: hidden; }
+        canvas { display: block; position: absolute; top: 0; left: 0; z-index: 1; }
         
-        #overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            pointer-events: none; color: white; text-align: center;
+        #ui-layer {
+            position: relative; z-index: 10; height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; pointer-events: none;
         }
-        h1 { font-weight: 200; font-size: 3rem; letter-spacing: 0.8em; margin: 0; }
-        .cta { 
-            pointer-events: auto; margin-top: 40px; padding: 12px 30px; 
-            border: 1px solid rgba(255,255,255,0.3); color: white; 
-            text-decoration: none; text-transform: uppercase; letter-spacing: 0.2em;
-            transition: 0.3s; font-size: 0.7rem; background: transparent; cursor: pointer;
+        
+        h1 { font-weight: 200; font-size: 4rem; letter-spacing: 1.2em; margin: 0; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        .description { margin-top: 20px; letter-spacing: 0.3em; font-size: 0.8rem; opacity: 0.6; }
+        
+        .controls { margin-top: 50px; pointer-events: auto; display: flex; gap: 20px; }
+        button, a { 
+            background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white;
+            padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2em;
+            cursor: pointer; transition: 0.4s; font-size: 0.7rem; text-decoration: none;
         }
-        .cta:hover { background: white; color: black; }
+        button:hover, a:hover { background: white; color: black; }
     </style>
 </head>
 <body>
 
-    <div id="overlay">
+    <div id="ui-layer">
         <h1>A E T H E R I S</h1>
-        <!-- REPLACE THIS HREF WITH YOUR STRIPE PAYMENT LINK -->
-        <a href="https://buy.stripe.com/your-unique-link-here" class="cta">Support the Flow</a>
+        <p class="description">TRANSCENDENCE THROUGH INTENT</p>
+        
+        <div class="controls">
+            <button onclick="toggleAudio()">Enter Sanctuary</button>
+            <a href="https://buy.stripe.com/your-payment-link-here">Support the Flow</a>
+        </div>
     </div>
-    
+
     <canvas id="canvas"></canvas>
 
+    <!-- Audio Element -->
+    <audio id="audio" loop>
+        <source src="your-music-url.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
+        // Kinetic Art Logic
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
-        let width, height, particles = [];
-
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
+        let particles = [];
+        
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.onresize = resize;
+        resize();
 
         class Particle {
             constructor() { this.reset(); }
-            reset() {
-                this.x = Math.random() * width; this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5;
-                this.alpha = Math.random();
-            }
-            update() {
-                this.x += this.vx; this.y += this.vy;
-                if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, 1, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
-                ctx.fill();
-            }
+            reset() { this.x = Math.random()*window.innerWidth; this.y = Math.random()*window.innerHeight; this.v = Math.random()*0.5; }
+            update() { this.y -= this.v; if(this.y < 0) this.y = window.innerHeight; }
+            draw() { ctx.fillStyle = 'rgba(255,255,255,0.1)'; ctx.fillRect(this.x, this.y, 1, Math.random()*20); }
         }
 
-        function init() {
-            resize();
-            for (let i = 0; i < 200; i++) particles.push(new Particle());
-            animate();
-        }
-
+        for(let i=0; i<150; i++) particles.push(new Particle());
+        
         function animate() {
-            ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
-            ctx.fillRect(0, 0, width, height);
+            ctx.fillStyle = '#050505'; ctx.fillRect(0,0,canvas.width,canvas.height);
             particles.forEach(p => { p.update(); p.draw(); });
             requestAnimationFrame(animate);
         }
+        animate();
 
-        window.addEventListener('resize', resize);
-        init();
+        // Audio Logic
+        function toggleAudio() {
+            const audio = document.getElementById('audio');
+            audio.paused ? audio.play() : audio.pause();
+        }
     </script>
 </body>
 </html>
