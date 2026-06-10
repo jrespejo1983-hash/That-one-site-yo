@@ -2,57 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>A E T H E R I S | Premium Assets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Scoopers | Yard Cleanup in East Milton</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap');
-        body, html { margin: 0; background: #050505; color: #fff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; }
-        canvas { position: fixed; top: 0; left: 0; z-index: -1; }
-        h1 { font-weight: 200; font-size: 3rem; letter-spacing: 0.5em; text-transform: uppercase; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; width: 100%; max-width: 1000px; }
-        .card { border: 1px solid rgba(255,255,255,0.1); padding: 30px; text-align: center; }
-        .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; border: 1px solid #fff; color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; }
+        :root { --accent: #f8e71c; --dark: #0f0f12; }
+        body { font-family: 'Arial Black', sans-serif; background: var(--dark); color: #fff; margin: 0; text-align: center; }
+        .hero { padding: 80px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('your-yard-bg.jpg'); background-size: cover; }
+        h1 { font-size: 3rem; color: var(--accent); margin-bottom: 0; }
+        .price { font-size: 2rem; color: #fff; margin: 20px 0; }
+        .cta-btn { background: var(--accent); color: var(--dark); padding: 20px 40px; font-size: 1.5rem; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; box-shadow: 0 10px 20px rgba(248, 231, 28, 0.3); }
+        .urgency { color: var(--accent); margin-top: 20px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <canvas id="canvas"></canvas>
+<section class="hero">
+    <h1>IS YOUR YARD A MINEFIELD?</h1>
+    <p>I clear the mess so you can enjoy your lawn again.</p>
+    
+    <div class="price">Starting at just $19.99/visit</div>
+    
+    <a href="tel:+15550000000" class="cta-btn">CALL/TEXT TO SCOOP NOW</a>
+    
+    <p class="urgency">Serving East Milton & Pace. Only 5 slots left for this week!</p>
+</section>
 
-    <section>
-        <h1>A E T H E R I S</h1>
-        <p>Curated Digital Assets for the Modern Creator.</p>
-    </section>
+<section style="padding: 40px;">
+    <h2>Why Cosmic Scoopers?</h2>
+    <p>No contracts. No hidden fees. Just clean grass.</p>
+</section>
 
-    <section id="shop">
-        <h2>Exclusive Collections</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Kinetic Loops</h3>
-                <p>10 unique, high-res motion backgrounds for your brand.</p>
-                <a href="https://buy.stripe.com/YOUR_LINK" class="btn">Purchase $25</a>
-            </div>
-            <div class="card">
-                <h3>Ambient Soundscapes</h3>
-                <p>Original, royalty-free audio for deep focus.</p>
-                <a href="https://buy.stripe.com/YOUR_LINK" class="btn">Purchase $15</a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        let w, h;
-        function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
-        window.onresize = resize; resize();
-        let particles = Array.from({length: 60}, () => ({x: Math.random()*w, y: Math.random()*h, r: Math.random()*1.5, v: Math.random()*0.3}));
-        function animate() {
-            ctx.fillStyle = 'rgba(5,5,5,0.05)'; ctx.fillRect(0,0,w,h);
-            ctx.fillStyle = 'white';
-            particles.forEach(p => { p.y -= p.v; if(p.y < 0) p.y = h; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill(); });
-            requestAnimationFrame(animate);
-        }
-        animate();
-    </script>
 </body>
 </html>
