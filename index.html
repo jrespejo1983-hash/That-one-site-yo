@@ -1,17 +1,87 @@
-<!-- Example of how to integrate the Shopify Buy Button into your site -->
-<section id="shop" class="section">
-    <h2>THE COLLECTION</h2>
-    <div class="grid">
-        <!-- Replace the text below with your generated Shopify Buy Button code -->
-        <div class="card">
-            <h3>Phonk/Lo-Fi Starter Pack</h3>
-            <!-- Shopify Buy Button Snippet Goes Here -->
-            <div id='product-component-123456'></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onyx & Aether | Forge the Future</title>
+    <style>
+        /* Modern Industrial Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #050505; color: #fff; font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Entrance Animation */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1s ease-out forwards; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; padding: 2rem 10%; position: sticky; top: 0; background: rgba(5,5,5,0.9); z-index: 1000; }
+        .brand { font-weight: 900; letter-spacing: 4px; font-size: 1.5rem; }
+        nav a { color: #888; text-decoration: none; margin-left: 2rem; transition: 0.3s; }
+        nav a:hover { color: #fff; }
+
+        /* Hero Section */
+        header { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        h1 { font-size: 5rem; margin-bottom: 1rem; letter-spacing: -2px; }
+        p { color: #666; font-size: 1.2rem; margin-bottom: 2rem; }
+
+        /* Product Grid */
+        .catalog { padding: 4rem 10%; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
+        .product-card { background: #111; padding: 2rem; border: 1px solid #222; transition: transform 0.3s ease; }
+        .product-card:hover { transform: translateY(-10px); border-color: #6f42c1; }
+
+        /* Technical Specs */
+        .specs { padding: 4rem 10%; background: #0a0a0a; }
+        .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .spec-box { padding: 2rem; border-left: 2px solid #6f42c1; }
+
+        footer { text-align: center; padding: 4rem; color: #444; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand fade-in">ONYX & AETHER</div>
+        <div>
+            <a href="#catalog">Catalog</a>
+            <a href="#specs">Standards</a>
         </div>
-        <div class="card">
-            <h3>Onyx Storm Sheet</h3>
-            <!-- Shopify Buy Button Snippet Goes Here -->
-            <div id='product-component-67890'></div>
+    </nav>
+
+    <header class="fade-in">
+        <h1>PRECISION DTF.</h1>
+        <p>Industrial-grade output for the modern apparel brand.</p>
+    </header>
+
+    <section id="catalog" class="catalog">
+        <h2 style="margin-bottom: 3rem;">COLLECTIONS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Phonk/Lo-Fi Starter Pack</h3>
+                <p style="margin: 1rem 0;">High-stretch, professional DTF transfers.</p>
+                <!-- PASTE SHOPIFY BUY BUTTON CODE HERE -->
+                <div id='product-component-1'></div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="specs" class="specs">
+        <h2 style="margin-bottom: 3rem;">PRODUCTION STANDARDS</h2>
+        <div class="spec-grid">
+            <div class="spec-box">
+                <h3>Durability</h3>
+                <p>Engineered for 50+ wash cycles.</p>
+            </div>
+            <div class="spec-box">
+                <h3>Application</h3>
+                <p>300°F (150°C) | 15s | Cold Peel.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Onyx & Aether. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
