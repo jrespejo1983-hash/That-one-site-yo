@@ -2,65 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>A E T H E R I S | Digital Sanctuary</title>
+    <title>A E T H E R I S | Premium Assets</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap');
         body, html { margin: 0; background: #050505; color: #fff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        
-        /* Sections */
-        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px; }
-        h2 { font-weight: 200; letter-spacing: 0.5em; text-transform: uppercase; margin-bottom: 30px; }
-        p { max-width: 600px; text-align: center; line-height: 1.8; opacity: 0.7; font-size: 0.9rem; }
-        
-        /* Canvas Background */
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; }
         canvas { position: fixed; top: 0; left: 0; z-index: -1; }
-        
-        /* Navigation/Buttons */
-        .btn { padding: 15px 40px; border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.6rem; letter-spacing: 0.2em; transition: 0.4s; }
-        .btn:hover { background: #fff; color: #000; }
+        h1 { font-weight: 200; font-size: 3rem; letter-spacing: 0.5em; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; width: 100%; max-width: 1000px; }
+        .card { border: 1px solid rgba(255,255,255,0.1); padding: 30px; text-align: center; }
+        .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; border: 1px solid #fff; color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; }
     </style>
 </head>
 <body>
 
     <canvas id="canvas"></canvas>
 
-    <!-- SECTION 1: HERO -->
     <section>
-        <h1 style="font-weight: 200; font-size: 4rem; letter-spacing: 1.2em;">A E T H E R I S</h1>
-        <p>TRANSCENDENCE THROUGH INTENT</p>
-        <div style="margin-top: 50px; display: flex; gap: 20px;">
-            <button class="btn" onclick="document.getElementById('about').scrollIntoView()">Explore</button>
-            <a href="https://buy.stripe.com/your-payment-link" class="btn" target="_blank">Support</a>
+        <h1>A E T H E R I S</h1>
+        <p>Curated Digital Assets for the Modern Creator.</p>
+    </section>
+
+    <section id="shop">
+        <h2>Exclusive Collections</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Kinetic Loops</h3>
+                <p>10 unique, high-res motion backgrounds for your brand.</p>
+                <a href="https://buy.stripe.com/YOUR_LINK" class="btn">Purchase $25</a>
+            </div>
+            <div class="card">
+                <h3>Ambient Soundscapes</h3>
+                <p>Original, royalty-free audio for deep focus.</p>
+                <a href="https://buy.stripe.com/YOUR_LINK" class="btn">Purchase $15</a>
+            </div>
         </div>
-    </section>
-
-    <!-- SECTION 2: ABOUT -->
-    <section id="about">
-        <h2>The Philosophy</h2>
-        <p>AETHERIS is a digital sanctuary designed for the modern creator. It bridges the gap between chaotic information and curated art, providing a space for focus, silence, and creative resonance. Every element is handcrafted to ensure that your experience remains undisturbed by the noise of the digital world.</p>
-    </section>
-
-    <!-- SECTION 3: CONTACT -->
-    <section>
-        <h2>Connect</h2>
-        <p>Your contribution keeps this sanctuary open and ad-free. If you find value in this space, support the flow to sustain the development of future kinetic experiences.</p>
-        <a href="mailto:your@email.com" class="btn" style="margin-top: 30px;">Inquiries</a>
     </section>
 
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         let w, h;
-        function init() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
-        window.onresize = init; init();
-        let particles = Array.from({length: 100}, () => ({x: Math.random()*w, y: Math.random()*h, r: Math.random()*2, v: Math.random()*0.5}));
-        function draw() {
-            ctx.fillStyle = 'rgba(5,5,5,0.1)'; ctx.fillRect(0,0,w,h);
-            ctx.fillStyle = 'rgba(255,255,255,0.2)';
+        function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+        window.onresize = resize; resize();
+        let particles = Array.from({length: 60}, () => ({x: Math.random()*w, y: Math.random()*h, r: Math.random()*1.5, v: Math.random()*0.3}));
+        function animate() {
+            ctx.fillStyle = 'rgba(5,5,5,0.05)'; ctx.fillRect(0,0,w,h);
+            ctx.fillStyle = 'white';
             particles.forEach(p => { p.y -= p.v; if(p.y < 0) p.y = h; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill(); });
-            requestAnimationFrame(draw);
+            requestAnimationFrame(animate);
         }
-        draw();
+        animate();
     </script>
 </body>
 </html>
