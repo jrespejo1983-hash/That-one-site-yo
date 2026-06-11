@@ -3,71 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONYX & AETHER | Premium DTF Transfers</title>
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    
-    <style>
-        :root { --bg: #050505; --text: #ffffff; --accent: #333; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; margin: 0; overflow-x: hidden; }
-        
-        nav { padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 90%; z-index: 100; }
-        .logo { font-weight: 800; letter-spacing: 4px; font-size: 1.5rem; }
-        
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero h1 { font-size: 6rem; margin: 0; text-transform: uppercase; line-height: 0.9; }
-        .hero p { opacity: 0.6; margin-top: 1rem; }
-        
-        .section { padding: 100px 5%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
-        .card { background: #0c0c0c; border: 1px solid #222; padding: 2rem; transition: 0.3s; }
-        .card:hover { border-color: #555; }
-        
-        footer { padding: 50px 5%; text-align: center; font-size: 0.8rem; border-top: 1px solid #222; }
-    </style>
+    <title>Cosmic Marketplace | East Milton Local Jobs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-slate-900 text-white font-sans">
 
-    <nav>
-        <div class="logo">ONYX & AETHER</div>
-        <div>Menu</div>
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center py-6 px-10 border-b border-slate-700">
+        <div class="text-2xl font-bold tracking-tighter text-blue-400">COSMIC<span class="text-white">MARKET</span></div>
+        <div class="space-x-6 text-sm">
+            <a href="#" class="hover:text-blue-400 transition">Find Work</a>
+            <a href="#" class="hover:text-blue-400 transition">Post a Job</a>
+            <button class="bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-500 transition">Get Started</button>
+        </div>
     </nav>
 
-    <header class="hero">
-        <h1 id="title">ONYX & AETHER</h1>
-        <p>Precision-engineered DTF transfers for the modern creator.</p>
+    <!-- Hero Section -->
+    <header class="py-20 px-10 text-center" data-aos="fade-up">
+        <h1 class="text-6xl font-extrabold mb-6">Local Work, <span class="text-blue-500">Connected.</span></h1>
+        <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">The East Milton hub for trusted household services. Post a task or find a gig in seconds.</p>
+        <div class="flex justify-center gap-4">
+            <button class="bg-white text-slate-900 px-8 py-3 rounded-lg font-bold text-lg hover:scale-105 transition">Find a Job</button>
+            <button class="border border-slate-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-slate-800 transition">Post a Task</button>
+        </div>
     </header>
 
-    <section class="section" id="collection">
-        <h2>Premade Collection</h2>
-        <div class="grid">
-            <div class="card"><h3>Phonk Essence</h3><p>High-fidelity vibrant print.</p></div>
-            <div class="card"><h3>Midnight R&B</h3><p>Deep blacks, soft matte finish.</p></div>
-            <div class="card"><h3>Urban Ghost</h3><p>Streetwear ready transfers.</p></div>
+    <!-- Job Grid -->
+    <section class="px-10 py-20 bg-slate-800/50">
+        <h2 class="text-3xl font-bold mb-10 text-center">Open Jobs in East Milton</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Example Job Card -->
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition" data-aos="zoom-in">
+                <div class="text-blue-400 text-sm mb-2">YARD WORK</div>
+                <h3 class="text-xl font-bold mb-2">Pressure Wash Driveway</h3>
+                <p class="text-slate-400 text-sm mb-4">Need help clearing the driveway for the weekend.</p>
+                <div class="flex justify-between items-center">
+                    <span class="font-bold text-green-400">$60</span>
+                    <button class="text-sm underline">View Details</button>
+                </div>
+            </div>
+
+            <!-- Add more job cards here -->
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 ONYX & AETHER | <a href="#" style="color:#666">Terms</a> | <a href="#" style="color:#666">Privacy</a></p>
+    <!-- Footer -->
+    <footer class="py-10 text-center text-slate-500 text-sm">
+        &copy; 2026 Cosmic Scoopers / Marketplace. Built for East Milton.
     </footer>
 
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Entrance Animation
-        gsap.from("#title", { duration: 1.8, opacity: 0, y: 100, ease: "power4.out" });
-        gsap.from(".hero p", { duration: 1, opacity: 0, delay: 0.5 });
-
-        // Scroll Animation
-        gsap.utils.toArray(".card").forEach((card) => {
-            gsap.from(card, {
-                scrollTrigger: { trigger: card, start: "top 80%" },
-                opacity: 0,
-                y: 50,
-                duration: 1
-            });
-        });
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>
