@@ -3,85 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onyx & Aether | Forge the Future</title>
+    <title>ONYX & AETHER | Premium DTF Transfers</title>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
     <style>
-        /* Modern Industrial Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #050505; color: #fff; font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; overflow-x: hidden; }
+        :root { --bg: #050505; --text: #ffffff; --accent: #333; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* Entrance Animation */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in { animation: fadeIn 1s ease-out forwards; }
-
-        /* Navigation */
-        nav { display: flex; justify-content: space-between; padding: 2rem 10%; position: sticky; top: 0; background: rgba(5,5,5,0.9); z-index: 1000; }
-        .brand { font-weight: 900; letter-spacing: 4px; font-size: 1.5rem; }
-        nav a { color: #888; text-decoration: none; margin-left: 2rem; transition: 0.3s; }
-        nav a:hover { color: #fff; }
-
-        /* Hero Section */
-        header { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        h1 { font-size: 5rem; margin-bottom: 1rem; letter-spacing: -2px; }
-        p { color: #666; font-size: 1.2rem; margin-bottom: 2rem; }
-
-        /* Product Grid */
-        .catalog { padding: 4rem 10%; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
-        .product-card { background: #111; padding: 2rem; border: 1px solid #222; transition: transform 0.3s ease; }
-        .product-card:hover { transform: translateY(-10px); border-color: #6f42c1; }
-
-        /* Technical Specs */
-        .specs { padding: 4rem 10%; background: #0a0a0a; }
-        .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .spec-box { padding: 2rem; border-left: 2px solid #6f42c1; }
-
-        footer { text-align: center; padding: 4rem; color: #444; }
+        nav { padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 90%; z-index: 100; }
+        .logo { font-weight: 800; letter-spacing: 4px; font-size: 1.5rem; }
+        
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { font-size: 6rem; margin: 0; text-transform: uppercase; line-height: 0.9; }
+        .hero p { opacity: 0.6; margin-top: 1rem; }
+        
+        .section { padding: 100px 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
+        .card { background: #0c0c0c; border: 1px solid #222; padding: 2rem; transition: 0.3s; }
+        .card:hover { border-color: #555; }
+        
+        footer { padding: 50px 5%; text-align: center; font-size: 0.8rem; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="brand fade-in">ONYX & AETHER</div>
-        <div>
-            <a href="#catalog">Catalog</a>
-            <a href="#specs">Standards</a>
-        </div>
+        <div class="logo">ONYX & AETHER</div>
+        <div>Menu</div>
     </nav>
 
-    <header class="fade-in">
-        <h1>PRECISION DTF.</h1>
-        <p>Industrial-grade output for the modern apparel brand.</p>
+    <header class="hero">
+        <h1 id="title">ONYX & AETHER</h1>
+        <p>Precision-engineered DTF transfers for the modern creator.</p>
     </header>
 
-    <section id="catalog" class="catalog">
-        <h2 style="margin-bottom: 3rem;">COLLECTIONS</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <h3>Phonk/Lo-Fi Starter Pack</h3>
-                <p style="margin: 1rem 0;">High-stretch, professional DTF transfers.</p>
-                <!-- PASTE SHOPIFY BUY BUTTON CODE HERE -->
-                <div id='product-component-1'></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="specs" class="specs">
-        <h2 style="margin-bottom: 3rem;">PRODUCTION STANDARDS</h2>
-        <div class="spec-grid">
-            <div class="spec-box">
-                <h3>Durability</h3>
-                <p>Engineered for 50+ wash cycles.</p>
-            </div>
-            <div class="spec-box">
-                <h3>Application</h3>
-                <p>300°F (150°C) | 15s | Cold Peel.</p>
-            </div>
+    <section class="section" id="collection">
+        <h2>Premade Collection</h2>
+        <div class="grid">
+            <div class="card"><h3>Phonk Essence</h3><p>High-fidelity vibrant print.</p></div>
+            <div class="card"><h3>Midnight R&B</h3><p>Deep blacks, soft matte finish.</p></div>
+            <div class="card"><h3>Urban Ghost</h3><p>Streetwear ready transfers.</p></div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Onyx & Aether. All Rights Reserved.</p>
+        <p>&copy; 2026 ONYX & AETHER | <a href="#" style="color:#666">Terms</a> | <a href="#" style="color:#666">Privacy</a></p>
     </footer>
 
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Entrance Animation
+        gsap.from("#title", { duration: 1.8, opacity: 0, y: 100, ease: "power4.out" });
+        gsap.from(".hero p", { duration: 1, opacity: 0, delay: 0.5 });
+
+        // Scroll Animation
+        gsap.utils.toArray(".card").forEach((card) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: "top 80%" },
+                opacity: 0,
+                y: 50,
+                duration: 1
+            });
+        });
+    </script>
 </body>
 </html>
