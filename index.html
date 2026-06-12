@@ -3,69 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elysium Landscapes | Premier Landscaping in Milton, Pace, & Navarre</title>
+    <title>Elysium Landscapes | Visual Excellence in Santa Rosa County</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1558904541-c843237e926a?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
+        .gallery-item { transition: transform 0.5s ease; }
+        .gallery-item:hover { transform: scale(1.05); }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-white text-gray-900">
 
-    <header class="h-screen flex flex-col justify-center items-center text-center p-6 bg-emerald-900 text-white">
-        <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-bold mb-4">Elysium Landscapes</h1>
-        <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl mb-8">Crafting Outdoor Sanctuaries in Milton, Pace, & Navarre</p>
-        <a href="#contact" class="bg-emerald-500 hover:bg-emerald-400 text-white px-10 py-4 rounded-full text-lg font-bold transition">Book Your Consultation</a>
+    <header class="h-screen hero-bg flex flex-col justify-center items-center text-center p-6">
+        <h1 data-aos="zoom-in" class="text-6xl md:text-9xl font-extrabold text-white mb-6 uppercase tracking-tighter">Elysium</h1>
+        <p data-aos="fade-up" data-aos-delay="300" class="text-2xl md:text-4xl text-white font-light tracking-wide italic">Elevating Nature in Milton, Pace & Navarre</p>
+        <a href="#portfolio" class="mt-12 bg-white text-emerald-900 px-12 py-5 rounded-full text-xl font-bold hover:bg-emerald-500 hover:text-white transition shadow-2xl">View Our Masterpieces</a>
     </header>
 
-    <section class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 data-aos="fade-up" class="text-4xl font-bold text-center mb-16">Our Premium Services</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div data-aos="fade-up" class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-emerald-600">
-                <h3 class="text-2xl font-bold mb-4">Landscape Design</h3>
-                <p class="text-gray-600 mb-4">Custom layouts tailored to your lifestyle and the Florida climate.</p>
-                <p class="font-bold text-emerald-700">Starting at $1,500</p>
+    <section id="portfolio" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-5xl font-bold text-center mb-16 uppercase">Our Transformations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div data-aos="fade-right" class="gallery-item overflow-hidden rounded-2xl shadow-xl h-96 bg-gray-300">
+                <img src="https://images.unsplash.com/photo-1598971833174-c30f3055452d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
             </div>
-            <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-emerald-600">
-                <h3 class="text-2xl font-bold mb-4">Hardscaping</h3>
-                <p class="text-gray-600 mb-4">Patios, walkways, and retaining walls built for longevity.</p>
-                <p class="font-bold text-emerald-700">Starting at $3,000</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-emerald-600">
-                <h3 class="text-2xl font-bold mb-4">Estate Maintenance</h3>
-                <p class="text-gray-600 mb-4">Year-round care to keep your property in pristine condition.</p>
-                <p class="font-bold text-emerald-700">Custom Quote</p>
+            <div data-aos="fade-left" class="gallery-item overflow-hidden rounded-2xl shadow-xl h-96 bg-gray-300">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
 
-    <section id="service-area" class="py-20 bg-gray-100">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Service Area: Santa Rosa County</h2>
-            <div class="w-full h-80 rounded-lg overflow-hidden shadow-2xl">
-                <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <section class="py-24 bg-emerald-900 text-white px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-5xl font-bold mb-16">Investment Tiers</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="p-10 border border-emerald-700 rounded-3xl hover:bg-emerald-800 transition">
+                    <h3 class="text-3xl font-bold mb-4">Foundation</h3>
+                    <p class="text-emerald-200">The essential refresh for your curb appeal.</p>
+                </div>
+                <div class="p-10 border border-emerald-700 rounded-3xl bg-emerald-800 shadow-2xl scale-110">
+                    <h3 class="text-3xl font-bold mb-4">Oasis</h3>
+                    <p class="text-white">Our most popular landscape design package.</p>
+                </div>
+                <div class="p-10 border border-emerald-700 rounded-3xl hover:bg-emerald-800 transition">
+                    <h3 class="text-3xl font-bold mb-4">Estate</h3>
+                    <p class="text-emerald-200">Total property transformation and care.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 max-w-2xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-10">Get a Free Estimate</h2>
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4">
-            <input type="text" name="name" placeholder="Full Name" required class="w-full p-4 border rounded">
-            <input type="email" name="email" placeholder="Email Address" required class="w-full p-4 border rounded">
-            <textarea name="message" placeholder="Describe your project (e.g., Hardscaping in Milton)" class="w-full p-4 border rounded h-32"></textarea>
-            <button type="submit" class="w-full bg-emerald-600 text-white py-4 rounded font-bold hover:bg-emerald-700 transition">Request Quote</button>
+    <section class="py-24 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div>
+            <h2 class="text-5xl font-bold mb-8">Serving Santa Rosa</h2>
+            <p class="text-xl text-gray-600 mb-8">From the heart of Milton to the coast of Navarre, we build landscapes that define luxury.</p>
+            <div class="h-96 w-full rounded-3xl overflow-hidden shadow-2xl">
+                <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="100%" frameborder="0"></iframe>
+            </div>
+        </div>
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="bg-gray-50 p-12 rounded-3xl shadow-xl">
+            <h3 class="text-3xl font-bold mb-8">Start Your Journey</h3>
+            <input type="text" name="name" placeholder="Name" class="w-full p-4 mb-4 rounded-xl border">
+            <input type="email" name="email" placeholder="Email" class="w-full p-4 mb-4 rounded-xl border">
+            <textarea name="message" placeholder="Project Details" class="w-full p-4 mb-8 rounded-xl border h-40"></textarea>
+            <button type="submit" class="w-full bg-emerald-600 text-white py-5 rounded-xl font-bold text-lg">Send Request</button>
         </form>
     </section>
 
-    <footer class="bg-gray-900 text-white py-10 text-center">
-        <p>&copy; 2026 Elysium Landscapes. All Rights Reserved.</p>
-        <div class="mt-4 space-x-4">
-            <a href="#" class="hover:text-emerald-400">Terms of Service</a>
-            <a href="#" class="hover:text-emerald-400">Privacy Policy</a>
-        </div>
-    </footer>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
-    </script>
+    <script>AOS.init({ duration: 1200, once: true });</script>
 </body>
 </html>
