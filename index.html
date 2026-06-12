@@ -10,27 +10,18 @@
         .bg-plum { background-color: #5b2c48; }
         .bg-navy { background-color: #0b2d3d; }
         .text-plum { color: #5b2c48; }
-        
-        .animated-bg {
-            background: linear-gradient(-45deg, #5b2c48, #0b2d3d, #3d2a3d, #5b2c48);
-            background-size: 400% 400%;
-            animation: gradient 10s ease infinite;
-        }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        .animated-bg { background: linear-gradient(-45deg, #5b2c48, #0b2d3d, #3d2a3d, #5b2c48); background-size: 400% 400%; animation: gradient 10s ease infinite; }
+        @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
     </style>
 </head>
 <body>
 
-    <nav class="max-w-7xl mx-auto flex items-center justify-between p-6 relative">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between p-6">
         <img src="logo.png" alt="Elysium Landscape Logo" class="h-24">
-        <button id="menu-btn" class="md:hidden text-3xl text-plum">☰</button>
-        <div id="menu" class="hidden md:flex font-semibold text-plum absolute md:static top-24 right-6 bg-white md:bg-transparent p-6 md:p-0 shadow-lg md:shadow-none rounded-lg z-50">
+        <div class="hidden md:flex items-center space-x-8 font-bold text-plum">
             <a href="#projects" class="hover:underline">Projects Gallery</a>
-            <a href="#about" class="ml-6 hover:underline">About</a>
+            <a href="#about" class="hover:underline">About</a>
+            <a href="tel:8502082229" class="bg-plum text-white px-6 py-2 rounded-full hover:bg-navy transition">850-208-2229</a>
         </div>
     </nav>
 
@@ -40,7 +31,7 @@
 
     <div class="max-w-7xl mx-auto px-6 pt-10 text-center">
         <h1 class="text-5xl font-bold italic text-plum">Transform Your Outdoor Oasis</h1>
-        <p class="text-2xl mt-4 font-medium">Elysium Landscape: Crafting Paradise in Pace, Milton & Navarre</p>
+        <p class="text-2xl mt-4 font-medium">Serving Pace, Milton & Navarre | Licensed & Insured</p>
     </div>
 
     <section class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8 text-center">
@@ -53,8 +44,8 @@
             <p>Built to Last. Quality You Can See & Feel.</p>
         </div>
         <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-            <h3 class="font-bold text-xl mb-2">Expert Service</h3>
-            <p>You Can Trust. Licensed, Insured & Dedicated to You.</p>
+            <h3 class="font-bold text-xl mb-2">Licensed & Insured</h3>
+            <p>Professional Care You Can Trust.</p>
         </div>
     </section>
 
@@ -69,17 +60,17 @@
             <div class="p-6 border rounded-xl bg-white shadow-sm">
                 <img src="icon-tree.png" alt="Native Design" class="w-16 h-16 mb-4">
                 <h3 class="text-2xl font-bold mb-2">Native Design</h3>
-                <p>We create beautiful, sustainable landscapes using local plants that thrive in our specific climate, reducing water usage and maintenance.</p>
+                <p>We create beautiful, sustainable landscapes using local plants that thrive in our specific climate.</p>
             </div>
             <div class="p-6 border rounded-xl bg-white shadow-sm">
                 <img src="icon-stone.png" alt="Enhancements" class="w-16 h-16 mb-4">
                 <h3 class="text-2xl font-bold mb-2">Enhancements</h3>
-                <p>Comprehensive refinement, including flowerbed design, mulch/rock/pine straw installation, exterior lighting, paver restoration, and light concrete works.</p>
+                <p>Flowerbed design, mulch/rock/pine straw installation, lighting, paver restoration, and light concrete works.</p>
             </div>
             <div class="p-6 border rounded-xl bg-white shadow-sm">
                 <img src="icon-tools.png" alt="Estate Maintenance" class="w-16 h-16 mb-4">
                 <h3 class="text-2xl font-bold mb-2">Estate Maintenance</h3>
-                <p>Comprehensive year-round care including lawn management, pruning, seasonal cleanups, and soil health monitoring for a pristine property.</p>
+                <p>Comprehensive year-round care including lawn management, pruning, and seasonal cleanups.</p>
             </div>
         </div>
     </section>
@@ -89,69 +80,27 @@
         <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-2xl p-16 max-w-2xl mx-auto">
             <div class="text-6xl mb-6">🚧</div>
             <h3 class="text-3xl font-bold text-gray-700 mb-4">Gallery Under Construction</h3>
-            <p class="text-gray-500 text-lg">We are currently curating photos of our latest transformations. Check back soon to see our work in action!</p>
+            <p class="text-gray-500 text-lg">We are currently curating photos of our latest transformations. Check back soon!</p>
         </div>
     </section>
 
-    <section id="about" class="bg-gray-100 py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-6">About Elysium Landscape</h2>
-            <p class="text-lg leading-relaxed max-w-3xl">Based in the heart of the Florida Panhandle, Elysium Landscape is dedicated to transforming outdoor spaces into private paradises. We serve Pace, Milton, and Navarre with a commitment to craftsmanship, integrity, and native beauty.</p>
-        </div>
-    </section>
-
-    <section class="max-w-3xl mx-auto px-6 py-20">
-        <h2 class="text-4xl font-bold mb-8 text-center">Ready to start your paradise?</h2>
-        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-6 bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-            <div class="grid md:grid-cols-2 gap-6">
-                <div><label class="block font-semibold mb-2">Full Name</label><input type="text" name="name" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-plum outline-none"></div>
-                <div><label class="block font-semibold mb-2">Phone Number</label><input type="tel" name="phone" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-plum outline-none"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div><label class="block font-semibold mb-2">Email</label><input type="email" name="email" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-plum outline-none"></div>
-                <div>
-                    <label class="block font-semibold mb-2">Service Interested In</label>
-                    <select name="service" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-plum outline-none">
-                        <option>Native Design</option>
-                        <option>Enhancements (Beds, Mulch, Lighting, Pavers)</option>
-                        <option>Estate Maintenance</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-            </div>
-            <div><label class="block font-semibold mb-2">Project Details</label><textarea name="message" required class="w-full p-4 border rounded-lg h-32 focus:ring-2 focus:ring-plum outline-none"></textarea></div>
+    <section class="max-w-3xl mx-auto px-6 py-20 text-center">
+        <h2 class="text-4xl font-bold mb-4">Ready to start your paradise?</h2>
+        <p class="text-lg text-gray-600 mb-8">Call or Text: <a href="tel:8502082229" class="font-bold text-plum hover:underline">850-208-2229</a> | Email: <a href="mailto:Elysiumscapes@gmail.com" class="font-bold text-plum hover:underline">Elysiumscapes@gmail.com</a></p>
+        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-6 bg-white p-8 rounded-2xl shadow-xl border border-gray-100 text-left">
             <button type="submit" class="w-full bg-plum text-white py-4 rounded-lg font-bold text-lg hover:bg-navy transition duration-300">Request Your Free Quote</button>
         </form>
     </section>
 
-    <footer class="max-w-7xl mx-auto px-6 py-12 border-t mt-12 text-center">
-        <div class="flex justify-center space-x-6 mb-8">
-            <button onclick="openModal('terms-modal')" class="text-sm text-gray-600 hover:text-plum underline transition">Terms & Conditions</button>
-            <button onclick="openModal('privacy-modal')" class="text-sm text-gray-600 hover:text-plum underline transition">Privacy Policy</button>
+    <footer class="max-w-7xl mx-auto px-6 py-12 border-t mt-12 text-center text-sm text-gray-600">
+        <div class="flex justify-center space-x-6 mb-4">
+            <button onclick="openModal('terms-modal')" class="hover:text-plum underline">Terms & Conditions</button>
+            <button onclick="openModal('privacy-modal')" class="hover:text-plum underline">Privacy Policy</button>
         </div>
-        <p class="text-sm text-gray-500">&copy; 2026 Elysium Landscape. All rights reserved.</p>
+        <p>&copy; 2026 Elysium Landscape. Licensed & Insured. All rights reserved.</p>
     </footer>
 
-    <div id="terms-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white p-8 rounded-xl max-w-2xl max-h-[80vh] overflow-y-auto">
-            <h2 class="text-2xl font-bold mb-4">Terms & Conditions</h2>
-            <p class="text-sm text-gray-700 leading-relaxed mb-4">All estimates are valid for 30 days. Elysium Landscape is not responsible for damages to unmarked private underground utility lines. Final payment is due upon project completion.</p>
-            <button onclick="closeModal('terms-modal')" class="bg-plum text-white px-6 py-2 rounded">Close</button>
-        </div>
-    </div>
-
-    <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white p-8 rounded-xl max-w-2xl max-h-[80vh] overflow-y-auto">
-            <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
-            <p class="text-sm text-gray-700 leading-relaxed mb-4">We collect contact information strictly to provide quotes and project updates. We never sell or rent your personal data to third parties.</p>
-            <button onclick="closeModal('privacy-modal')" class="bg-plum text-white px-6 py-2 rounded">Close</button>
-        </div>
-    </div>
-
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        menuBtn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
         function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
         function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
     </script>
