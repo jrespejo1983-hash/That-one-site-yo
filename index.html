@@ -41,11 +41,20 @@
             <h2 class="text-5xl font-bold mb-12 text-center">Consultation Request</h2>
             <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
                 <input type="text" name="name" placeholder="Full Name" required class="w-full p-5 rounded-xl bg-slate-800 border border-slate-700 text-white">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <label class="flex items-center p-4 bg-slate-800 rounded-xl border border-slate-700 cursor-pointer hover:border-emerald-500"><input type="checkbox" name="service" value="Design" class="mr-3"> Design</label>
-                    <label class="flex items-center p-4 bg-slate-800 rounded-xl border border-slate-700 cursor-pointer hover:border-emerald-500"><input type="checkbox" name="service" value="Hardscape" class="mr-3"> Hardscape</label>
+                
+                <div class="grid md:grid-cols-3 gap-4">
+                    <label class="flex items-center p-4 bg-slate-800 rounded-xl border border-slate-700 cursor-pointer hover:border-emerald-500">
+                        <input type="checkbox" name="service" value="Design" class="mr-3"> Design
+                    </label>
+                    <label class="flex items-center p-4 bg-slate-800 rounded-xl border border-slate-700 cursor-pointer hover:border-emerald-500">
+                        <input type="checkbox" name="service" value="Hardscape" class="mr-3"> Hardscape
+                    </label>
+                    <label class="flex items-center p-4 bg-slate-800 rounded-xl border border-slate-700 cursor-pointer hover:border-emerald-500">
+                        <input type="checkbox" name="service" value="Estate Maintenance" class="mr-3"> Maintenance
+                    </label>
                 </div>
-                <textarea name="message" placeholder="Describe your vision..." class="w-full p-5 h-40 rounded-xl bg-slate-800 border border-slate-700 text-white"></textarea>
+                
+                <textarea name="message" placeholder="Describe your vision or maintenance needs..." class="w-full p-5 h-40 rounded-xl bg-slate-800 border border-slate-700 text-white"></textarea>
                 <button type="submit" class="w-full bg-emerald-600 py-6 rounded-xl font-bold text-xl hover:bg-emerald-500 transition">Request Consultation</button>
             </form>
         </div>
