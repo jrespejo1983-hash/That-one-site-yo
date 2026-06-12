@@ -14,14 +14,21 @@
 </head>
 <body>
 
-    <nav class="max-w-7xl mx-auto flex items-center justify-between p-6">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between p-6 relative">
         <img src="logo.png" alt="Elysium Landscape Logo" class="h-24">
-        <div class="hidden md:flex space-x-8 font-semibold text-plum">
-            <a href="#services" class="hover:underline">Services</a>
+        
+        <button id="menu-btn" class="md:hidden text-3xl text-plum">☰</button>
+
+        <div id="menu" class="hidden md:flex font-semibold text-plum absolute md:static top-24 right-6 bg-white md:bg-transparent p-6 md:p-0 shadow-lg md:shadow-none rounded-lg z-50">
             <a href="#portfolio" class="hover:underline">Portfolio</a>
-            <a href="#about" class="hover:underline">About</a>
         </div>
     </nav>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        menuBtn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+    </script>
 
     <header class="max-w-7xl mx-auto px-6 text-center">
         <img src="hero-garden.jpg" alt="Landscape" class="w-full h-[400px] object-cover rounded-xl shadow-lg">
