@@ -3,71 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elysium Landscapes | Design Excellence in Santa Rosa County</title>
+    <title>Elysium Landscapes | Premier Outdoor Design in Santa Rosa County</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('your-landscape-hero.jpg'); background-size: cover; background-position: center; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('YOUR_HERO_IMAGE.jpg'); background-size: cover; background-position: center; }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-slate-50 text-slate-900">
 
-    <header class="h-screen hero-gradient flex flex-col justify-center items-center text-center p-6">
-        <h1 data-aos="zoom-in" class="text-6xl md:text-9xl font-extrabold text-white uppercase tracking-tighter">Elysium</h1>
-        <p data-aos="fade-up" data-aos-delay="300" class="text-2xl md:text-4xl text-white font-light italic">The Art of Outdoor Living in Milton, Pace & Navarre</p>
+    <header class="h-screen hero-bg flex flex-col justify-center items-center text-center p-6 text-white">
+        <h1 data-aos="zoom-in" class="text-6xl md:text-9xl font-extrabold uppercase tracking-tighter">Elysium Landscapes</h1>
+        <p data-aos="fade-up" data-aos-delay="300" class="text-2xl md:text-4xl font-light italic mt-6">Defining Outdoor Luxury in Milton, Pace & Navarre</p>
+        <a href="#quote" class="mt-12 bg-emerald-600 hover:bg-emerald-500 px-12 py-5 rounded-full font-bold text-lg transition shadow-2xl">Begin Your Transformation</a>
     </header>
 
     <section class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="text-5xl font-bold text-center mb-20 uppercase">Our Premium Services</h2>
-        <div class="grid md:grid-cols-3 gap-12 text-center">
-            <div data-aos="fade-up" class="space-y-4">
-                <div class="h-64 bg-gray-200 rounded-3xl mb-6 shadow-xl"></div>
-                <h3 class="text-3xl font-bold">Landscape Architecture</h3>
-                <p class="text-gray-600">Bespoke design plans that harmonize your home with the natural Florida landscape.</p>
+        <h2 class="text-5xl font-bold text-center mb-20">Our Signature Services</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div data-aos="fade-up" class="group cursor-pointer">
+                <div class="h-80 bg-slate-200 rounded-3xl mb-6 overflow-hidden shadow-lg group-hover:scale-105 transition-transform"><img src="DESIGN_IMAGE.jpg" class="w-full h-full object-cover"></div>
+                <h3 class="text-2xl font-bold">Landscape Architecture</h3>
             </div>
-            <div data-aos="fade-up" data-aos-delay="200" class="space-y-4">
-                <div class="h-64 bg-gray-200 rounded-3xl mb-6 shadow-xl"></div>
-                <h3 class="text-3xl font-bold">Hardscape Design</h3>
-                <p class="text-gray-600">Masterful installation of patios, walkways, and architectural stone features.</p>
+            <div data-aos="fade-up" data-aos-delay="200" class="group cursor-pointer">
+                <div class="h-80 bg-slate-200 rounded-3xl mb-6 overflow-hidden shadow-lg group-hover:scale-105 transition-transform"><img src="HARDSCAPE_IMAGE.jpg" class="w-full h-full object-cover"></div>
+                <h3 class="text-2xl font-bold">Hardscape Engineering</h3>
             </div>
-            <div data-aos="fade-up" data-aos-delay="400" class="space-y-4">
-                <div class="h-64 bg-gray-200 rounded-3xl mb-6 shadow-xl"></div>
-                <h3 class="text-3xl font-bold">Estate Maintenance</h3>
-                <p class="text-gray-600">White-glove, year-round management to ensure your grounds stay perfect.</p>
+            <div data-aos="fade-up" data-aos-delay="400" class="group cursor-pointer">
+                <div class="h-80 bg-slate-200 rounded-3xl mb-6 overflow-hidden shadow-lg group-hover:scale-105 transition-transform"><img src="MAINTENANCE_IMAGE.jpg" class="w-full h-full object-cover"></div>
+                <h3 class="text-2xl font-bold">Estate Maintenance</h3>
             </div>
         </div>
     </section>
 
-    <section id="quote" class="py-24 bg-gray-50 px-6">
-        <div class="max-w-3xl mx-auto bg-white p-12 rounded-3xl shadow-2xl">
-            <h2 class="text-4xl font-bold mb-8">Start Your Transformation</h2>
+    <section id="quote" class="py-24 bg-slate-900 text-white px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12 text-center">Consultation Request</h2>
             <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
-                <input type="text" name="name" placeholder="Full Name" class="w-full p-4 border rounded-xl">
-                
-                <label class="block text-lg font-semibold">Select Your Desired Services:</label>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <label class="flex items-center p-4 border rounded-xl hover:bg-emerald-50 cursor-pointer">
-                        <input type="checkbox" name="service" value="Landscape Design" class="mr-3 w-5 h-5"> Landscape Design
-                    </label>
-                    <label class="flex items-center p-4 border rounded-xl hover:bg-emerald-50 cursor-pointer">
-                        <input type="checkbox" name="service" value="Hardscaping" class="mr-3 w-5 h-5"> Hardscaping
-                    </label>
-                    <label class="flex items-center p-4 border rounded-xl hover:bg-emerald-50 cursor-pointer">
-                        <input type="checkbox" name="service" value="Garden Installation" class="mr-3 w-5 h-5"> Garden Installation
-                    </label>
-                    <label class="flex items-center p-4 border rounded-xl hover:bg-emerald-50 cursor-pointer">
-                        <input type="checkbox" name="service" value="Estate Maintenance" class="mr-3 w-5 h-5"> Estate Maintenance
-                    </label>
+                <input type="text" name="name" placeholder="Full Name" required class="w-full p-5 rounded-xl bg-slate-800 border border-slate-700 text-white">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <label class="flex items-center p-4 bg-slate-800 rounded-xl border border-slate-700 cursor-pointer hover:border-emerald-500"><input type="checkbox" name="service" value="Design" class="mr-3"> Design</label>
+                    <label class="flex items-center p-4 bg-slate-800 rounded-xl border border-slate-700 cursor-pointer hover:border-emerald-500"><input type="checkbox" name="service" value="Hardscape" class="mr-3"> Hardscape</label>
                 </div>
-
-                <textarea name="message" placeholder="Tell us about your project vision..." class="w-full p-4 border rounded-xl h-40"></textarea>
-                <button type="submit" class="w-full bg-emerald-900 text-white py-5 rounded-xl font-bold text-lg hover:bg-emerald-700 transition">Request Consultation</button>
+                <textarea name="message" placeholder="Describe your vision..." class="w-full p-5 h-40 rounded-xl bg-slate-800 border border-slate-700 text-white"></textarea>
+                <button type="submit" class="w-full bg-emerald-600 py-6 rounded-xl font-bold text-xl hover:bg-emerald-500 transition">Request Consultation</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-gray-500">
-        <p>&copy; 2026 Elysium Landscapes. Servicing Milton, Pace & Navarre.</p>
+    <footer class="py-12 text-center text-slate-500">
+        <p>&copy; 2026 Elysium Landscapes | Milton, Pace, Navarre, FL</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
