@@ -10,6 +10,18 @@
         .bg-plum { background-color: #5b2c48; }
         .bg-navy { background-color: #0b2d3d; }
         .text-plum { color: #5b2c48; }
+        
+        /* Animated Gradient Background */
+        .animated-bg {
+            background: linear-gradient(-45deg, #5b2c48, #0b2d3d, #3d2a3d, #5b2c48);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
     </style>
 </head>
 <body>
@@ -28,13 +40,14 @@
         menuBtn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
     </script>
 
-    <header class="w-full">
-        <img src="hero-garden.png" alt="Landscape" class="w-full h-[500px] object-contain bg-black shadow-lg">
-        <div class="max-w-7xl mx-auto px-6 py-10 text-center">
-            <h1 class="text-5xl font-bold italic text-plum">Transform Your Outdoor Oasis</h1>
-            <p class="text-2xl mt-4 font-medium">Elysium Landscape: Crafting Paradise in Pace, Milton & Navarre</p>
-        </div>
+    <header class="w-full animated-bg py-4">
+        <img src="hero-garden.png" alt="Landscape" class="w-full h-[500px] object-contain shadow-2xl">
     </header>
+
+    <div class="max-w-7xl mx-auto px-6 pt-10 text-center">
+        <h1 class="text-5xl font-bold italic text-plum">Transform Your Outdoor Oasis</h1>
+        <p class="text-2xl mt-4 font-medium">Elysium Landscape: Crafting Paradise in Pace, Milton & Navarre</p>
+    </div>
 
     <section class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8 text-center">
         <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
