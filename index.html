@@ -3,63 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[BUSINESS NAME] | Professional Services</title>
+    <title>[BRAND NAME] // INDUSTRIAL GRID</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #000000; overflow-x: hidden; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400&display=swap');
+        body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; }
+        
+        /* Industrial Grid Pattern */
+        .grid-bg { background-image: radial-gradient(#1a1a1a 1px, transparent 1px); background-size: 30px 30px; }
         
         /* Animations */
-        .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .glitch-in { opacity: 0; animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; filter: blur(10px); } to { opacity: 1; filter: blur(0); } }
         
-        /* Graphic Elements */
-        .line-art { border-top: 2px solid #000; width: 80px; margin-bottom: 2rem; }
-        .hover-lift { transition: all 0.4s ease; }
-        .hover-lift:hover { transform: translateY(-10px); }
+        .code-font { font-family: 'JetBrains Mono', monospace; }
     </style>
 </head>
-<body class="antialiased">
+<body class="grid-bg min-h-screen p-8 md:p-20">
 
     <!-- NAVIGATION -->
-    <nav class="max-w-6xl mx-auto px-8 py-10 flex justify-between items-center fade-in">
-        <div class="text-lg font-black uppercase tracking-tighter">[BUSINESS NAME]</div>
-        <a href="mailto:[YOUR EMAIL]" class="text-[10px] font-bold uppercase tracking-[0.2em] border-b border-black hover:opacity-50 transition">Contact</a>
+    <nav class="max-w-5xl mx-auto flex justify-between items-center mb-24 glitch-in">
+        <div class="code-font text-xs text-yellow-500 uppercase">// [BRAND_ID]</div>
+        <div class="text-sm font-black uppercase tracking-widest">[BRAND NAME]</div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="max-w-6xl mx-auto px-8 py-24 fade-in" style="animation-delay: 0.2s;">
-        <div class="line-art"></div>
-        <h1 class="text-7xl md:text-9xl font-black uppercase leading-[0.9] tracking-tighter mb-12">Professional<br>Excellence<br>Delivered.</h1>
-        <p class="text-xl md:text-2xl max-w-2xl font-light text-gray-600 mb-16 leading-relaxed">
-            [Your value proposition here. Establish authority in 1 sentence.]
-        </p>
-        <a href="[REVENUE_LINK]" class="inline-block bg-black text-white px-12 py-6 font-bold uppercase tracking-widest text-xs hover:bg-gray-800 transition hover:scale-105">Get Started</a>
+    <header class="max-w-5xl mx-auto mb-32 glitch-in" style="animation-delay: 0.2s;">
+        <h1 class="text-7xl md:text-[120px] font-black uppercase leading-[0.85] tracking-tighter mb-12">System<br>Ready.</h1>
+        <p class="text-gray-500 max-w-lg mb-16 text-sm uppercase tracking-[0.2em]">Deploy your vision. High-fidelity architecture for the modern operator.</p>
+        <a href="[REVENUE_LINK]" class="inline-block border border-white px-10 py-4 font-bold uppercase text-[10px] hover:bg-white hover:text-black transition">Initiate Protocol</a>
     </header>
 
-    <!-- SERVICES -->
-    <section class="max-w-6xl mx-auto px-8 py-24 border-t border-gray-100 fade-in" style="animation-delay: 0.4s;">
-        <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] mb-16 text-gray-400">// Core Offerings</h2>
-        <div class="grid md:grid-cols-3 gap-16">
-            <div class="hover-lift">
-                <h3 class="text-2xl font-black mb-4">01. Strategy</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">[Detail service 1.]</p>
-            </div>
-            <div class="hover-lift">
-                <h3 class="text-2xl font-black mb-4">02. Execution</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">[Detail service 2.]</p>
-            </div>
-            <div class="hover-lift">
-                <h3 class="text-2xl font-black mb-4">03. Results</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">[Detail service 3.]</p>
-            </div>
+    <!-- FEATURES GRID -->
+    <section class="max-w-5xl mx-auto grid md:grid-cols-2 gap-px bg-zinc-800 border border-zinc-800 glitch-in" style="animation-delay: 0.4s;">
+        <div class="bg-black p-12">
+            <h3 class="text-yellow-500 code-font mb-2">01_STRUCTURE</h3>
+            <p class="text-gray-400 text-sm">Engineered for speed. Minimalist code for maximum performance.</p>
+        </div>
+        <div class="bg-black p-12">
+            <h3 class="text-yellow-500 code-font mb-2">02_COMPLIANCE</h3>
+            <p class="text-gray-400 text-sm">Global standards ready. Merchant-of-record integration.</p>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="max-w-6xl mx-auto px-8 py-16 border-t border-gray-100 flex flex-col md:flex-row justify-between text-[10px] uppercase tracking-[0.2em] text-gray-400 fade-in" style="animation-delay: 0.6s;">
-        <span class="mb-4 md:mb-0">© 2026 [BUSINESS NAME]. ALL SALES FINAL.</span>
-        <span>FOUNDATION // MYEXCLUSIVEARSENAL</span>
+    <footer class="max-w-5xl mx-auto mt-32 pt-16 border-t border-zinc-900 flex justify-between text-[10px] uppercase tracking-[0.3em] text-zinc-600 glitch-in" style="animation-delay: 0.6s;">
+        <span>© 2026 [BRAND NAME]</span>
+        <span>EDITION_02 // INDUSTRIAL</span>
     </footer>
 
 </body>
