@@ -3,88 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyExclusiveArsenal | Enterprise Armory</title>
+  <title>VEXØDUS // TITAN CORE OPERATIONS</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { --accent: #f59e0b; }
-    body { background-color: #020617; color: #f1f5f9; font-family: 'Inter', sans-serif; }
-    .glass { background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }
-    .glow-accent { border: 1px solid rgba(245, 158, 11, 0.2); }
-    .glow-accent:hover { border: 1px solid var(--accent); box-shadow: 0 0 20px rgba(245, 158, 11, 0.1); }
-    .font-mono { font-family: 'Courier New', monospace; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=JetBrains+Mono&display=swap');
+    body { background: #020617; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+    .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); }
+    .mono { font-family: 'JetBrains Mono', monospace; }
   </style>
 </head>
 <body>
 
-  <!-- HUD NAVIGATION -->
-  <header class="p-8 border-b border-slate-800 flex justify-between items-center bg-slate-950">
-    <div class="flex items-center gap-4">
-      <div class="w-3 h-3 bg-amber-500 rounded-full shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
-      <h1 class="text-xl font-black tracking-tighter uppercase text-white">MyExclusive<span class="text-amber-500">Arsenal</span></h1>
+  <!-- NAVIGATION -->
+  <header class="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-950">
+    <div class="flex items-center gap-2">
+      <div class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+      <span class="text-lg font-black tracking-tighter text-white">VEXØDUS<span class="text-slate-600">.CORE</span></span>
     </div>
-    <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest bg-slate-900 px-3 py-1 rounded">System Ready: 20-Unit Payload</div>
+    <div class="text-[10px] text-slate-500 mono uppercase tracking-widest">Global Deploy: 30 Units Active</div>
   </header>
 
   <main class="max-w-7xl mx-auto p-6 md:p-12">
-    
-    <!-- CONTROL TERMINAL -->
-    <section class="glass p-8 rounded-2xl mb-12">
-      <div class="flex items-center gap-2 mb-8">
-        <div class="w-1 h-4 bg-amber-500"></div>
-        <h2 class="text-xs font-bold text-white uppercase tracking-widest">Configuration Terminal</h2>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <label class="block text-[9px] text-slate-400 mb-2 uppercase tracking-wider">Entity Identity</label>
-          <input type="text" id="cfg-name" value="Titan Core Ops" class="w-full bg-transparent border-b border-slate-700 pb-2 text-white font-medium focus:border-amber-500 outline-none transition">
-        </div>
-        <div>
-          <label class="block text-[9px] text-slate-400 mb-2 uppercase tracking-wider">Primary Vector</label>
-          <input type="text" id="cfg-phone" value="(850) 483-9102" class="w-full bg-transparent border-b border-slate-700 pb-2 text-white font-mono focus:border-amber-500 outline-none transition">
-        </div>
-        <div>
-          <label class="block text-[9px] text-slate-400 mb-2 uppercase tracking-wider">CTA Command</label>
-          <input type="text" id="cfg-cta" value="Book Free Inspection" class="w-full bg-transparent border-b border-slate-700 pb-2 text-white font-medium focus:border-amber-500 outline-none transition">
-        </div>
+    <!-- CONFIGURATION -->
+    <section class="glass p-8 rounded-xl mb-12">
+      <h2 class="text-xs font-bold text-amber-500 mb-6 uppercase tracking-widest">Global Configuration Panel</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <input type="text" id="brand-name" placeholder="Brand Identity" class="bg-slate-900 border border-slate-800 p-3 text-sm text-white w-full rounded">
+        <input type="text" id="brand-phone" placeholder="(850) 483-9102" class="bg-slate-900 border border-slate-800 p-3 text-sm text-white w-full rounded">
+        <button onclick="updateAll()" class="bg-amber-500 text-black font-black uppercase text-xs py-3 rounded hover:bg-amber-400 transition">Update All Units</button>
       </div>
     </section>
 
     <!-- UNIT GRID -->
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-      <script>
-        const niches = ["Roofing", "Detailing", "Landscaping", "Pet Waste", "HVAC", "Painting", "Fitness", "Cafe", "Real Estate", "Moving", "Pool Cleaning", "Security", "Pest Control", "Electrician", "Pressure Wash", "Handyman", "Window Cleaning", "Roof Cleaning", "Auto Repair", "Junk Removal"];
-        
-        document.write(niches.map((n, i) => `
-          <div class="glow-accent bg-slate-900/50 p-6 rounded-lg flex flex-col justify-between transition hover:-translate-y-1">
-            <div>
-              <div class="text-[9px] font-mono text-slate-600 mb-4">UNIT_${String(i+1).padStart(2, '0')}</div>
-              <div class="text-sm font-bold text-white mb-1 leading-tight dynamic-name">Titan Core Ops</div>
-              <div class="text-[10px] text-amber-500 uppercase font-bold tracking-wider">${n}</div>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-800">
-              <div class="text-[10px] font-mono text-slate-400 dynamic-phone">(850) 483-9102</div>
-              <div class="mt-2 text-[9px] text-slate-600 font-bold uppercase tracking-widest dynamic-cta">Book Free Inspection</div>
-            </div>
-          </div>
-        `).join(''));
-      </script>
-    </div>
+    <div id="unit-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"></div>
   </main>
 
-  <footer class="text-center py-12 text-[10px] text-slate-700 font-mono">
-    &copy; 2026 MYEXCLUSIVEARSENAL // ARCHITECTURE SECURED
-  </footer>
-
   <script>
-    const inputs = ['cfg-name', 'cfg-phone', 'cfg-cta'];
-    inputs.forEach(id => {
-      document.getElementById(id).addEventListener('input', (e) => {
-        const val = e.target.value;
-        const target = id.replace('cfg-', 'dynamic-');
-        document.querySelectorAll('.' + target).forEach(el => el.textContent = val);
-      });
-    });
+    const niches = ["Roofing", "Detailing", "Landscaping", "Pet Waste", "HVAC", "Painting", "Fitness", "Cafe", "Real Estate", "Moving", "Pool Service", "Security", "Pest Control", "Electrician", "Pressure Wash", "Handyman", "Window Clean", "Roof Clean", "Auto Repair", "Junk Removal", "Carpet Clean", "Gutter Repair", "Tree Service", "Flooring", "Fence Install", "Drywall", "Appliance Repair", "Solar Install", "Foundation", "Snow Removal"];
+    
+    function renderGrid() {
+      const grid = document.getElementById('unit-grid');
+      grid.innerHTML = niches.map((n, i) => `
+        <div class="glass p-5 rounded-lg border border-slate-800 hover:border-amber-500 transition-all group">
+          <div class="text-[9px] mono text-slate-600 mb-4">UNIT_${String(i+1).padStart(2, '0')}</div>
+          <div class="text-sm font-black uppercase text-white mb-1 name-field">Titan Core Ops</div>
+          <div class="text-[10px] font-bold text-amber-500 mb-4 uppercase">${n}</div>
+          <div class="text-[10px] mono text-slate-400 phone-field">(850) 483-9102</div>
+        </div>
+      `).join('');
+    }
+
+    function updateAll() {
+      const name = document.getElementById('brand-name').value || "Titan Core Ops";
+      const phone = document.getElementById('brand-phone').value || "(850) 483-9102";
+      document.querySelectorAll('.name-field').forEach(el => el.textContent = name);
+      document.querySelectorAll('.phone-field').forEach(el => el.textContent = phone);
+    }
+
+    renderGrid();
   </script>
 </body>
 </html>
