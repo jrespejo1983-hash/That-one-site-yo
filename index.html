@@ -3,53 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO: REPLACE BELOW TITLES -->
+    <!-- SEO: REPLACE TITLE & DESCRIPTION -->
     <title>BUSINESS NAME | Professional Services</title>
     <meta name="description" content="Add your professional business description here.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #1a1a1a; }
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #000000; }
+        .hero-line { height: 2px; background: #000; width: 60px; margin-bottom: 2rem; }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <!-- SECTION: NAVIGATION -->
+    <!-- NAVIGATION -->
     <nav class="max-w-6xl mx-auto px-8 py-10 flex justify-between items-center">
-        <div class="text-xl font-black uppercase tracking-tighter">BUSINESS NAME</div>
-        <a href="tel:000-000-0000" class="text-xs font-bold uppercase tracking-widest border-b border-black hover:text-gray-500">Call: 000-000-0000</a>
+        <div class="text-lg font-black uppercase tracking-tighter cursor-pointer">BUSINESS NAME</div>
+        <a href="tel:000-000-0000" class="text-[10px] font-bold uppercase tracking-[0.2em] border-b border-black hover:opacity-50 transition">Call: 000.000.0000</a>
     </nav>
 
-    <!-- SECTION: HERO -->
-    <header class="max-w-6xl mx-auto px-8 py-20">
-        <h1 class="text-6xl md:text-8xl font-black uppercase leading-[0.9] tracking-tighter mb-10">Professional<br>Excellence<br>Delivered.</h1>
-        <p class="text-xl max-w-lg font-light text-gray-600 mb-12">Your primary value proposition goes here. Briefly explain how you solve your client's most difficult problems with precision and speed.</p>
-        <a href="#" class="bg-black text-white px-10 py-5 font-bold uppercase tracking-widest text-sm hover:bg-gray-800 transition">Book Your Consultation</a>
+    <!-- HERO SECTION -->
+    <header class="max-w-6xl mx-auto px-8 py-24">
+        <div class="hero-line"></div>
+        <h1 class="text-7xl md:text-9xl font-black uppercase leading-[0.9] tracking-tighter mb-12">Professional<br>Excellence<br>Delivered.</h1>
+        <p class="text-xl md:text-2xl max-w-2xl font-light text-gray-600 mb-16 leading-relaxed">
+            Your primary value proposition goes here. Explain how you solve your client's most difficult problems with precision, integrity, and speed.
+        </p>
+        <a href="#" class="inline-block bg-black text-white px-12 py-6 font-bold uppercase tracking-widest text-xs hover:bg-gray-800 transition">Book Your Consultation</a>
     </header>
 
-    <!-- SECTION: SERVICES & PRICING -->
-    <section class="max-w-6xl mx-auto px-8 py-20 border-t border-gray-200">
-        <div class="grid md:grid-cols-2 gap-20">
+    <!-- SERVICES & PRICING -->
+    <section class="max-w-6xl mx-auto px-8 py-24 border-t border-gray-100">
+        <div class="grid md:grid-cols-2 gap-24">
+            <!-- SERVICE LIST -->
             <div>
-                <h2 class="text-xs font-bold uppercase tracking-widest mb-6 text-gray-400">// Services</h2>
-                <ul class="space-y-6 text-xl font-medium">
-                    <li>— Service Offering 01</li>
-                    <li>— Service Offering 02</li>
-                    <li>— Service Offering 03</li>
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] mb-12 text-gray-400">// Core Services</h2>
+                <ul class="space-y-8 text-2xl font-medium tracking-tight">
+                    <li class="flex items-center gap-4">— <span>Service Offering 01</span></li>
+                    <li class="flex items-center gap-4">— <span>Service Offering 02</span></li>
+                    <li class="flex items-center gap-4">— <span>Service Offering 03</span></li>
                 </ul>
             </div>
+            <!-- INVESTMENT -->
             <div>
-                <h2 class="text-xs font-bold uppercase tracking-widest mb-6 text-gray-400">// Investment</h2>
-                <div class="text-6xl font-black tracking-tighter">$XXX</div>
-                <p class="mt-6 text-gray-500 italic">Transparent, flat-rate pricing for high-level professional results.</p>
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] mb-12 text-gray-400">// Investment</h2>
+                <div class="text-7xl font-black tracking-tighter mb-6">$XXX</div>
+                <p class="text-gray-500 italic max-w-sm">Transparent, flat-rate pricing for high-level professional results. No hidden fees, just value.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION: FOOTER -->
-    <footer class="max-w-6xl mx-auto px-8 py-12 border-t border-gray-200 flex flex-col md:flex-row justify-between text-[10px] uppercase tracking-widest text-gray-500">
+    <!-- FOOTER -->
+    <footer class="max-w-6xl mx-auto px-8 py-16 border-t border-gray-100 flex flex-col md:flex-row justify-between text-[10px] uppercase tracking-[0.2em] text-gray-400">
         <span class="mb-4 md:mb-0">© 2026 BUSINESS NAME. ALL RIGHTS RESERVED.</span>
-        <span>PROFESSIONAL FOUNDATION BY MYEXCLUSIVEARSENAL</span>
+        <span>PROFESSIONAL FOUNDATION // MYEXCLUSIVEARSENAL</span>
     </footer>
 
 </body>
