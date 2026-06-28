@@ -2,83 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VEXØDUS // TITAN CORE OPERATIONS</title>
+  <title>MYEXCLUSIVEARSENAL // DIGITAL ASSETS</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=JetBrains+Mono&display=swap');
-    body { background: #020617; color: #e2e8f0; font-family: 'Inter', sans-serif; }
-    .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }
-    .mono { font-family: 'JetBrains Mono', monospace; }
+    body { background: #000; color: #fff; font-family: 'Inter', sans-serif; }
+    .unit-card { border: 1px solid #222; background: #0a0a0a; transition: 0.3s; }
+    .unit-card:hover { border: 1px solid #eab308; }
   </style>
 </head>
-<body>
+<body class="p-10">
 
-  <!-- HUD NAVIGATION -->
-  <header class="p-8 border-b border-slate-800 flex justify-between items-center bg-slate-950 sticky top-0 z-50">
-    <div class="flex items-center gap-3">
-      <div class="w-3 h-3 bg-amber-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
-      <h1 class="text-lg font-black tracking-tighter uppercase text-white">VEXØDUS<span class="text-slate-600 font-light">.CORE</span></h1>
-    </div>
-    <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest bg-slate-900 px-3 py-1 rounded">System Status: 30 Units Active</div>
+  <header class="max-w-6xl mx-auto mb-20">
+    <h1 class="text-6xl font-black uppercase tracking-tighter">MY<span class="text-yellow-500">EXCLUSIVE</span>ARSENAL</h1>
+    <p class="text-gray-500 uppercase tracking-widest text-xs mt-4">Premium web templates. Instant deployment.</p>
   </header>
 
-  <main class="max-w-7xl mx-auto p-6 md:p-12">
-    
-    <!-- CONFIGURATION TERMINAL -->
-    <section class="glass p-8 rounded-2xl mb-16">
-      <h2 class="text-[10px] font-bold text-amber-500 mb-8 uppercase tracking-widest">Global Configuration Panel</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <label class="block text-[9px] text-slate-400 mb-2 uppercase tracking-wider">Brand Name</label>
-          <input type="text" id="cfg-name" value="Titan Core Ops" class="w-full bg-slate-900 border border-slate-800 p-3 text-sm text-white rounded outline-none focus:border-amber-500">
-        </div>
-        <div>
-          <label class="block text-[9px] text-slate-400 mb-2 uppercase tracking-wider">Contact Phone</label>
-          <input type="text" id="cfg-phone" value="(850) 483-9102" class="w-full bg-slate-900 border border-slate-800 p-3 text-sm text-white rounded outline-none focus:border-amber-500">
-        </div>
-        <div class="flex items-end">
-          <button onclick="updateAll()" class="w-full bg-amber-500 text-black font-black uppercase text-xs py-3 rounded hover:bg-amber-400 transition">Update Previews</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 30-UNIT GRID -->
-    <div id="unit-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"></div>
-  </main>
-
-  <footer class="text-center py-12 text-[10px] text-slate-700 font-mono border-t border-slate-900">
-    &copy; 2026 VEXØDUS // MASTER ARCHITECTURE SECURED
-  </footer>
+  <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="catalog"></main>
 
   <script>
-    const niches = ["Roofing", "Detailing", "Landscaping", "Pet Waste", "HVAC", "Painting", "Fitness", "Cafe", "Real Estate", "Moving", "Pool Service", "Security", "Pest Control", "Electrician", "Pressure Wash", "Handyman", "Window Clean", "Roof Clean", "Auto Repair", "Junk Removal", "Carpet Clean", "Gutter Repair", "Tree Service", "Flooring", "Fence Install", "Drywall", "Appliance Repair", "Solar Install", "Foundation", "Snow Removal"];
-    
-    function renderGrid() {
-      const grid = document.getElementById('unit-grid');
-      grid.innerHTML = niches.map((n, i) => `
-        <div class="glass p-6 rounded-lg border border-slate-800 hover:border-amber-500/50 transition-all group flex flex-col justify-between">
+    // FILL THIS IN: Replace '#' with your actual Gumroad/LemonSqueezy links
+    const assets = Array.from({length: 30}, (_, i) => ({
+      id: String(i + 1).padStart(2, '0'),
+      link: "#" 
+    }));
+
+    document.getElementById('catalog').innerHTML = assets.map(a => `
+      <div class="unit-card p-4">
+        <div class="h-40 bg-gray-900 mb-4 flex items-center justify-center text-[10px] text-gray-700">PREVIEW IMAGE</div>
+        <div class="flex justify-between items-end">
           <div>
-            <div class="text-[9px] mono text-slate-600 mb-4">UNIT_${String(i+1).padStart(2, '0')}</div>
-            <div class="text-sm font-black uppercase text-white mb-1 name-field">Titan Core Ops</div>
-            <div class="text-[10px] font-bold text-amber-500 uppercase tracking-wider">${n}</div>
+            <div class="text-[9px] text-yellow-600 font-mono">UNIT_${a.id}</div>
+            <div class="font-bold text-sm">Design Edition ${a.id}</div>
           </div>
-          <div class="mt-8 pt-4 border-t border-slate-800">
-            <div class="text-[10px] mono text-slate-400 mb-4 phone-field">(850) 483-9102</div>
-            <a href="#" class="block w-full text-center border border-slate-700 py-2 text-[9px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Purchase File</a>
-          </div>
+          <a href="${a.link}" class="bg-yellow-500 text-black px-4 py-2 text-[9px] font-black uppercase hover:bg-yellow-400">Buy Now</a>
         </div>
-      `).join('');
-    }
-
-    function updateAll() {
-      const name = document.getElementById('cfg-name').value;
-      const phone = document.getElementById('cfg-phone').value;
-      document.querySelectorAll('.name-field').forEach(el => el.textContent = name);
-      document.querySelectorAll('.phone-field').forEach(el => el.textContent = phone);
-    }
-
-    renderGrid();
+      </div>
+    `).join('');
   </script>
 </body>
 </html>
