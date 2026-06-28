@@ -2,39 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MYEXCLUSIVEARSENAL // DIGITAL ASSETS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYEXCLUSIVEARSENAL // THE DIGITAL FOUNDATION</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
     body { background: #000; color: #fff; font-family: 'Inter', sans-serif; }
-    .unit-card { border: 1px solid #222; background: #0a0a0a; transition: 0.3s; }
-    .unit-card:hover { border: 1px solid #eab308; }
+    .glass { background: #0a0a0a; border: 1px solid #1a1a1a; transition: all 0.3s ease; }
+    .glass:hover { border-color: #eab308; transform: translateY(-5px); }
   </style>
 </head>
-<body class="p-10">
+<body class="p-6 md:p-16">
 
-  <header class="max-w-6xl mx-auto mb-20">
-    <h1 class="text-6xl font-black uppercase tracking-tighter">MY<span class="text-yellow-500">EXCLUSIVE</span>ARSENAL</h1>
-    <p class="text-gray-500 uppercase tracking-widest text-xs mt-4">Premium web templates. Instant deployment.</p>
+  <!-- HERO SECTION -->
+  <header class="max-w-6xl mx-auto mb-20 text-center md:text-left">
+    <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter">MY<span class="text-yellow-500">EXCLUSIVE</span>ARSENAL</h1>
+    <p class="text-gray-400 uppercase tracking-[0.2em] text-xs mt-6">Professional Foundations. Skip the Setup. Launch Today.</p>
   </header>
 
-  <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="catalog"></main>
+  <!-- CATALOG GRID -->
+  <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8" id="catalog"></main>
 
   <script>
-    // FILL THIS IN: Replace '#' with your actual Gumroad/LemonSqueezy links
+    // POPULATE 30 STYLES (Replace '#' with your actual Gumroad checkout links)
     const assets = Array.from({length: 30}, (_, i) => ({
       id: String(i + 1).padStart(2, '0'),
       link: "#" 
     }));
 
     document.getElementById('catalog').innerHTML = assets.map(a => `
-      <div class="unit-card p-4">
-        <div class="h-40 bg-gray-900 mb-4 flex items-center justify-center text-[10px] text-gray-700">PREVIEW IMAGE</div>
+      <div class="glass p-5">
+        <div class="h-40 bg-zinc-900 mb-6 flex items-center justify-center text-[10px] text-zinc-600 font-mono tracking-widest uppercase">
+          Style Preview_${a.id}
+        </div>
         <div class="flex justify-between items-end">
           <div>
-            <div class="text-[9px] text-yellow-600 font-mono">UNIT_${a.id}</div>
-            <div class="font-bold text-sm">Design Edition ${a.id}</div>
+            <div class="text-[9px] text-yellow-600 font-bold tracking-widest uppercase">Edition ${a.id}</div>
+            <div class="font-bold text-sm">Professional Asset</div>
           </div>
-          <a href="${a.link}" class="bg-yellow-500 text-black px-4 py-2 text-[9px] font-black uppercase hover:bg-yellow-400">Buy Now</a>
+          <a href="${a.link}" class="bg-yellow-500 text-black px-5 py-2 text-[10px] font-black uppercase hover:bg-yellow-400 transition">Acquire</a>
         </div>
       </div>
     `).join('');
