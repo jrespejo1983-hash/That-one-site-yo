@@ -1,68 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MYEXCLUSIVEARSENAL // PROFESSIONAL STARTER FOUNDATIONS</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
-    body { background: #000; color: #fff; font-family: 'Inter', sans-serif; }
-    .glass { background: #0a0a0a; border: 1px solid #1a1a1a; transition: all 0.3s ease; }
-    .glass:hover { border-color: #eab308; transform: translateY(-5px); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUSINESS NAME | Professional Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;700;900&display=swap');
+        body { font-family: 'Outfit', sans-serif; background-color: #ffffff; color: #000000; }
+    </style>
 </head>
-<body class="p-6 md:p-16">
+<body>
 
-  <!-- HERO SECTION -->
-  <header class="max-w-6xl mx-auto mb-20 text-center md:text-left">
-    <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter">MY<span class="text-yellow-500">EXCLUSIVE</span>ARSENAL</h1>
-    <p class="text-gray-400 uppercase tracking-[0.2em] text-sm mt-6">Professional Foundations. Zero Agency Fees.</p>
-    <p class="text-gray-500 max-w-xl mt-6 leading-relaxed">
-      I believe you shouldn't have to pay an agency thousands to get a professional website. I provide the clean, functional code foundations you need to launch. You own the code, you control the hosting, you keep your budget.
-    </p>
-  </header>
+    <!-- NAV -->
+    <nav class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
+        <div class="text-2xl font-black uppercase tracking-tighter">BUSINESS NAME</div>
+        <a href="tel:555-000-0000" class="border-b-2 border-black font-bold uppercase text-xs">Call 555-000-0000</a>
+    </nav>
 
-  <!-- LAUNCH CHECKLIST (THE HONESTY SECTION) -->
-  <section class="max-w-6xl mx-auto my-20 p-8 border border-zinc-800 bg-zinc-950">
-    <h2 class="text-sm font-black uppercase tracking-widest text-yellow-500 mb-6 italic">// WHAT YOU NEED TO LAUNCH</h2>
-    <div class="grid md:grid-cols-2 gap-6 text-xs text-zinc-400">
-      <p>1. <strong>Identity:</strong> Your business name, contact phone, and professional description.</p>
-      <p>2. <strong>Visuals:</strong> A simple logo or photo to make it your own.</p>
-      <p>3. <strong>Action:</strong> A link to your payment processor or booking calendar.</p>
-      <p>4. <strong>SEO:</strong> A quick update to the Title & Description tags in the file header.</p>
-    </div>
-    <p class="text-[10px] text-zinc-600 mt-6 pt-6 border-t border-zinc-900">* Every template includes a README with a step-by-step guide to get you live in 60 seconds.</p>
-  </section>
+    <!-- HERO -->
+    <header class="max-w-7xl mx-auto px-6 py-20">
+        <h1 class="text-7xl md:text-9xl font-black uppercase leading-none tracking-tight mb-8">Premium <br>Solutions <br>For You.</h1>
+        <p class="text-xl md:text-2xl max-w-xl mb-12 font-light">We provide industry-leading results with a focus on precision, efficiency, and professional excellence.</p>
+        <a href="#" class="bg-black text-white px-10 py-5 font-bold uppercase tracking-widest text-sm hover:opacity-80 transition">Acquire Services</a>
+    </header>
 
-  <!-- CATALOG GRID -->
-  <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8" id="catalog"></main>
-
-  <footer class="max-w-6xl mx-auto mt-20 pt-10 border-t border-zinc-900 text-center text-[10px] text-gray-600 uppercase tracking-widest">
-    All sales are final. Digital assets provided for immediate deployment.
-  </footer>
-
-  <script>
-    const assets = Array.from({length: 30}, (_, i) => ({
-      id: String(i + 1).padStart(2, '0'),
-      link: "#" 
-    }));
-
-    document.getElementById('catalog').innerHTML = assets.map(a => `
-      <div class="glass p-5">
-        <div class="h-40 bg-zinc-900 mb-6 flex items-center justify-center text-[10px] text-zinc-600 font-mono tracking-widest uppercase">
-          Edition_${a.id}
+    <!-- CONTENT -->
+    <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16 border-t border-black">
+        <div>
+            <h2 class="text-xs font-bold uppercase tracking-widest mb-4">// About Us</h2>
+            <p class="text-2xl font-light italic">Your professional description goes here. Explain how you solve problems and why you are the best choice in the industry.</p>
         </div>
-        <div class="flex justify-between items-end">
-          <div>
-            <div class="text-[9px] text-yellow-600 font-bold tracking-widest uppercase">Starter Asset</div>
-            <div class="font-bold text-sm">Edition ${a.id}</div>
-          </div>
-          <a href="${a.link}" class="bg-yellow-500 text-black px-5 py-2 text-[10px] font-black uppercase hover:bg-yellow-400 transition">Acquire</a>
+        <div>
+            <h2 class="text-xs font-bold uppercase tracking-widest mb-4">// Our Pricing</h2>
+            <div class="text-6xl font-black tracking-tighter">$XXX <span class="text-sm font-normal not-italic">/ starting rate</span></div>
+            <p class="mt-6 text-gray-500 text-sm">Transparent pricing for premium results. No hidden fees, just professional work.</p>
         </div>
-      </div>
-    `).join('');
-  </script>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="max-w-7xl mx-auto px-6 py-12 border-t border-black text-[10px] uppercase tracking-widest flex justify-between">
+        <span>© 2026 BUSINESS NAME. ALL RIGHTS RESERVED.</span>
+        <span>PROFESSIONALLY CRAFTED FOUNDATION</span>
+    </footer>
+
 </body>
 </html>
