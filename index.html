@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MYEXCLUSIVEARSENAL // THE DIGITAL FOUNDATION</title>
+  <title>MYEXCLUSIVEARSENAL // PROFESSIONAL STARTER FOUNDATIONS</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
@@ -17,14 +17,39 @@
   <!-- HERO SECTION -->
   <header class="max-w-6xl mx-auto mb-20 text-center md:text-left">
     <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter">MY<span class="text-yellow-500">EXCLUSIVE</span>ARSENAL</h1>
-    <p class="text-gray-400 uppercase tracking-[0.2em] text-xs mt-6">Professional Foundations. Skip the Setup. Launch Today.</p>
+    <p class="text-gray-400 uppercase tracking-[0.2em] text-sm mt-6">Stop overpaying for agencies. Start here.</p>
+    <p class="text-gray-500 max-w-xl mt-6 leading-relaxed">
+      You don't need a thousand-dollar agency to launch your brand. We provide the professional foundations. You download, customize in minutes, and launch. Keep your budget for your business.
+    </p>
   </header>
+
+  <!-- VALUE PROPOSITION -->
+  <section class="max-w-6xl mx-auto my-20">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 border-l border-yellow-500">
+        <h3 class="text-white font-black uppercase mb-2">Zero Agency Fees</h3>
+        <p class="text-gray-500 text-xs uppercase tracking-wider">Stop paying thousands for simple sites. No retainers, no hourly billing.</p>
+      </div>
+      <div class="p-6 border-l border-yellow-500">
+        <h3 class="text-white font-black uppercase mb-2">Own Your Code</h3>
+        <p class="text-gray-500 text-xs uppercase tracking-wider">No monthly subscription traps. Own your files, host them anywhere, forever.</p>
+      </div>
+      <div class="p-6 border-l border-yellow-500">
+        <h3 class="text-white font-black uppercase mb-2">Instant Start</h3>
+        <p class="text-gray-500 text-xs uppercase tracking-wider">Go from an idea to a live professional website in under 10 minutes.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- CATALOG GRID -->
   <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8" id="catalog"></main>
 
+  <footer class="max-w-6xl mx-auto mt-20 pt-10 border-t border-zinc-900 text-center text-[10px] text-gray-600 uppercase tracking-widest">
+    All sales are final. Digital assets provided for immediate deployment.
+  </footer>
+
   <script>
-    // POPULATE 30 STYLES (Replace '#' with your actual Gumroad checkout links)
+    // REPLACE '#' WITH YOUR GUMROAD/LEMONSQUEEZY LINKS
     const assets = Array.from({length: 30}, (_, i) => ({
       id: String(i + 1).padStart(2, '0'),
       link: "#" 
@@ -33,12 +58,12 @@
     document.getElementById('catalog').innerHTML = assets.map(a => `
       <div class="glass p-5">
         <div class="h-40 bg-zinc-900 mb-6 flex items-center justify-center text-[10px] text-zinc-600 font-mono tracking-widest uppercase">
-          Style Preview_${a.id}
+          Edition_${a.id}
         </div>
         <div class="flex justify-between items-end">
           <div>
-            <div class="text-[9px] text-yellow-600 font-bold tracking-widest uppercase">Edition ${a.id}</div>
-            <div class="font-bold text-sm">Professional Asset</div>
+            <div class="text-[9px] text-yellow-600 font-bold tracking-widest uppercase">Starter Asset</div>
+            <div class="font-bold text-sm">Edition ${a.id}</div>
           </div>
           <a href="${a.link}" class="bg-yellow-500 text-black px-5 py-2 text-[10px] font-black uppercase hover:bg-yellow-400 transition">Acquire</a>
         </div>
