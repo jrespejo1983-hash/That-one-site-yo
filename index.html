@@ -3,60 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[BRAND NAME] // BRUTALIST</title>
+    <title>[BRAND NAME] // SAAS_PRO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap');
-        body { background: #f0f0f0; color: #000; font-family: 'Inter', sans-serif; }
-        
-        /* Brutalist Styling */
-        h1 { font-family: 'Archivo Black', sans-serif; }
-        .thick-border { border: 4px solid #000; }
-        
-        /* Animations */
-        .reveal { opacity: 0; animation: reveal 0.6s ease-out forwards; }
-        @keyframes reveal { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body { background: #ffffff; color: #0f172a; font-family: 'Inter', sans-serif; }
     </style>
 </head>
 <body class="p-8 md:p-16">
 
+    <!-- NAVIGATION -->
+    <nav class="max-w-6xl mx-auto flex justify-between items-center mb-24">
+        <div class="font-extrabold text-xl tracking-tighter">[BRAND]</div>
+        <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Edition_05 // Cloud</div>
+    </nav>
+
     <!-- HERO -->
-    <header class="max-w-6xl mx-auto mb-32 reveal">
-        <div class="thick-border bg-black text-white p-8 mb-8 inline-block text-[10px] uppercase tracking-widest">Edition_03 // Brutalist</div>
-        <h1 class="text-[80px] md:text-[160px] leading-[0.8] tracking-tighter mb-16">RAW<br>FORM.</h1>
-        
-        <div class="grid md:grid-cols-2 gap-16 items-end">
-            <p class="text-xl md:text-2xl font-bold max-w-md">Stripped back. High impact. No distractions. The only choice for uncompromising work.</p>
-            <a href="[REVENUE_LINK]" class="thick-border bg-white p-8 text-center font-black text-xl hover:bg-black hover:text-white transition">SECURE ASSET</a>
+    <header class="max-w-6xl mx-auto mb-32">
+        <h1 class="text-7xl md:text-[100px] font-extrabold leading-[0.9] tracking-tighter mb-10">Built for<br><span class="text-blue-600">Scale.</span></h1>
+        <p class="text-xl text-slate-600 max-w-lg mb-12">A high-performance framework designed to turn your visitors into verified leads.</p>
+        <div class="flex gap-4">
+            <a href="[REVENUE_LINK]" class="bg-blue-600 text-white px-10 py-4 font-bold uppercase text-[12px] tracking-widest hover:bg-blue-700 transition">Deploy Now</a>
+            <a href="#" class="border border-slate-200 px-10 py-4 font-bold uppercase text-[12px] tracking-widest hover:bg-slate-50 transition">Learn More</a>
         </div>
     </header>
 
-    <!-- CONTENT MODULE -->
-    <section class="max-w-6xl mx-auto thick-border bg-white p-12 reveal" style="animation-delay: 0.3s;">
-        <div class="grid md:grid-cols-3 gap-12">
-            <div>
-                <div class="w-12 h-12 bg-black mb-6"></div>
-                <h3 class="font-bold text-lg mb-2">BOLD</h3>
-                <p class="text-sm text-gray-600">Visuals that demand attention from the first second.</p>
-            </div>
-            <div>
-                <div class="w-12 h-12 bg-black mb-6"></div>
-                <h3 class="font-bold text-lg mb-2">PURE</h3>
-                <p class="text-sm text-gray-600">Eliminating the noise to focus on the intent.</p>
-            </div>
-            <div>
-                <div class="w-12 h-12 bg-black mb-6"></div>
-                <h3 class="font-bold text-lg mb-2">SCALED</h3>
-                <p class="text-sm text-gray-600">Built to handle high-traffic deployment.</p>
-            </div>
+    <!-- FEATURES -->
+    <section class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 border-t border-slate-100 pt-16">
+        <div>
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-6">01</div>
+            <h3 class="font-bold mb-2">High Speed</h3>
+            <p class="text-sm text-slate-500">Optimized for search engines and rapid load times.</p>
+        </div>
+        <div>
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-6">02</div>
+            <h3 class="font-bold mb-2">Conversion</h3>
+            <p class="text-sm text-slate-500">Designed to guide users toward your primary CTA.</p>
+        </div>
+        <div>
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-6">03</div>
+            <h3 class="font-bold mb-2">Professional</h3>
+            <p class="text-sm text-slate-500">Agency-grade aesthetics for your business.</p>
         </div>
     </section>
-
-    <!-- FOOTER -->
-    <footer class="max-w-6xl mx-auto mt-24 flex justify-between uppercase text-[10px] font-bold reveal" style="animation-delay: 0.6s;">
-        <span>© 2026 [BRAND NAME]</span>
-        <span>BRUTALISM // MYEXCLUSIVEARSENAL</span>
-    </footer>
 
 </body>
 </html>
