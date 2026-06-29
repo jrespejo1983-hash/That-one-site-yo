@@ -1,64 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>VEXØDUS AI | Intelligent Interface</title>
     <style>
-        :root {
-            --bg: #f8f9fa;
-            --surface: #ffffff;
-            --text: #212529;
-            --accent: #4a90e2; /* Softer, professional blue */
-            --border: #e9ecef;
+        :root { --glass: rgba(255, 255, 255, 0.05); --accent: #00ffcc; }
+        body, html { margin: 0; height: 100%; overflow: hidden; background: #050505; color: white; font-family: 'Inter', sans-serif; }
+        
+        /* Animated Background */
+        .bg { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, #000, #111);
+            z-index: -1;
         }
-        body { 
-            background: var(--bg); color: var(--text); 
-            font-family: 'Inter', system-ui, sans-serif; 
-            line-height: 1.6; margin: 0; display: flex; 
-            justify-content: center; padding: 40px 20px;
+        .grid-overlay {
+            position: absolute; width: 100%; height: 100%;
+            background-image: radial-gradient(var(--accent) 1px, transparent 1px);
+            background-size: 50px 50px; opacity: 0.1;
+            animation: moveGrid 20s linear infinite;
         }
-        .container { 
-            width: 100%; max-width: 700px; 
-            background: var(--surface); padding: 40px; 
-            border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        @keyframes moveGrid { from { transform: translateY(0); } to { transform: translateY(50px); } }
+
+        /* The Interface */
+        .console {
+            position: relative; width: 80%; max-width: 800px; margin: 10vh auto;
+            background: var(--glass); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;
+            padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
-        h1 { font-weight: 700; letter-spacing: -0.5px; margin-bottom: 20px; }
-        #chat-window { min-height: 300px; margin-bottom: 20px; }
-        input { 
-            width: 100%; padding: 15px; border: 2px solid var(--border); 
-            border-radius: 8px; font-size: 16px; transition: 0.3s;
+        input {
+            width: 100%; background: transparent; border: none; border-bottom: 2px solid var(--accent);
+            color: white; padding: 15px; font-size: 1.2rem; outline: none;
         }
-        input:focus { border-color: var(--accent); outline: none; }
-        .message { margin-bottom: 15px; padding: 10px; border-radius: 6px; }
-        .ai-msg { background: #f1f3f5; }
     </style>
 </head>
 <body>
+    <div class="bg"><div class="grid-overlay"></div></div>
+    
+    <div class="console">
+        <h1 style="text-transform: uppercase; letter-spacing: 5px;">VEXØDUS // AI</h1>
+        <p style="color: var(--accent);">SYSTEM OPERATIONAL. AWAITING INPUT.</p>
+        <div id="output" style="height: 300px; overflow-y: auto; margin: 20px 0;"></div>
+        <input type="text" id="cli" placeholder=">_">
+    </div>
 
-<div class="container">
-    <h1>VEXØDUS AI</h1>
-    <p>Professional. Precise. At your service.</p>
-    <div id="chat-window"></div>
-    <input type="text" id="cli" placeholder="How can I assist you today?">
-</div>
-
-<script>
-    const cli = document.getElementById('cli');
-    const chat = document.getElementById('chat-window');
-
-    cli.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            const val = cli.value;
-            chat.innerHTML += `<div class="message"><b>You:</b> ${val}</div>`;
-            
-            // Welcoming AI response
-            setTimeout(() => {
-                chat.innerHTML += `<div class="message ai-msg">VEXØDUS: I've processed your request. How else can I assist your workflow?</div>`;
-            }, 600);
-            
-            cli.value = '';
-        }
-    });
-</script>
+    <script>
+        const cli = document.getElementById('cli');
+        cli.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter') {
+                document.getElementById('output').innerHTML += `<div>> ${cli.value}</div>`;
+                cli.value = '';
+            }
+        });
+    </script>
 </body>
 </html>
