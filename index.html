@@ -2,50 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[BRAND NAME] // SAAS_PRO</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>VEXØDUS AI</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-        body { background: #ffffff; color: #0f172a; font-family: 'Inter', sans-serif; }
+        :root {
+            --bg: #000000;
+            --border: #333333;
+            --text: #ffffff;
+            --accent: #ff3300; /* High-contrast industrial red */
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .brand { font-weight: 800; letter-spacing: 0.1rem; font-size: 1.2rem; }
+        #terminal {
+            flex: 1;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        .input-zone {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+        input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            font-size: 1rem;
+            outline: none;
+            font-family: 'Courier New', monospace;
+        }
+        input::placeholder { color: #333; }
     </style>
 </head>
-<body class="p-8 md:p-16">
+<body>
 
-    <!-- NAVIGATION -->
-    <nav class="max-w-6xl mx-auto flex justify-between items-center mb-24">
-        <div class="font-extrabold text-xl tracking-tighter">[BRAND]</div>
-        <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Edition_05 // Cloud</div>
-    </nav>
-
-    <!-- HERO -->
-    <header class="max-w-6xl mx-auto mb-32">
-        <h1 class="text-7xl md:text-[100px] font-extrabold leading-[0.9] tracking-tighter mb-10">Built for<br><span class="text-blue-600">Scale.</span></h1>
-        <p class="text-xl text-slate-600 max-w-lg mb-12">A high-performance framework designed to turn your visitors into verified leads.</p>
-        <div class="flex gap-4">
-            <a href="[REVENUE_LINK]" class="bg-blue-600 text-white px-10 py-4 font-bold uppercase text-[12px] tracking-widest hover:bg-blue-700 transition">Deploy Now</a>
-            <a href="#" class="border border-slate-200 px-10 py-4 font-bold uppercase text-[12px] tracking-widest hover:bg-slate-50 transition">Learn More</a>
-        </div>
+    <header>
+        <div class="brand">VEXØDUS // AI</div>
+        <div style="font-size: 0.7rem;">STATUS: ONLINE</div>
     </header>
 
-    <!-- FEATURES -->
-    <section class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 border-t border-slate-100 pt-16">
-        <div>
-            <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-6">01</div>
-            <h3 class="font-bold mb-2">High Speed</h3>
-            <p class="text-sm text-slate-500">Optimized for search engines and rapid load times.</p>
-        </div>
-        <div>
-            <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-6">02</div>
-            <h3 class="font-bold mb-2">Conversion</h3>
-            <p class="text-sm text-slate-500">Designed to guide users toward your primary CTA.</p>
-        </div>
-        <div>
-            <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-6">03</div>
-            <h3 class="font-bold mb-2">Professional</h3>
-            <p class="text-sm text-slate-500">Agency-grade aesthetics for your business.</p>
-        </div>
-    </section>
+    <div id="terminal">
+        > VEXØDUS system initialized... <br>
+        > Waiting for input...
+    </div>
 
+    <div class="input-zone">
+        <input type="text" id="cli" placeholder=">_ Enter command or query" autofocus>
+    </div>
+
+    <script>
+        const cli = document.getElementById('cli');
+        const terminal = document.getElementById('terminal');
+
+        cli.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const query = cli.value;
+                terminal.innerHTML += `<br>> ${query}`;
+                cli.value = '';
+                // Integration point for your VEXØDUS backend
+            }
+        });
+    </script>
 </body>
 </html>
