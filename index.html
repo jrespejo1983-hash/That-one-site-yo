@@ -2,137 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYEXCLUSIVEARSENAL | Sanctuary</title>
+    <title>THE SANCTUARY | MYEXCLUSIVEARSENAL</title>
     <style>
-        /* --- SPIRITUAL DESIGN SYSTEM --- */
-        :root {
-            --bg: #05070a;
-            --glass: rgba(255, 255, 255, 0.05);
-            --accent: #d4af37; /* Muted Gold */
-            --text: #e2e8f0;
-        }
+        :root { --gold: #d4af37; --bg: #030405; }
+        body { margin: 0; background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow: hidden; display: flex; align-items: center; justify-content: center; height: 100vh; }
 
-        body, html { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+        /* The Breathing Pulse Background */
+        #aura { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(80px); animation: breathe 8s infinite alternate; z-index: 0; }
+        @keyframes breathe { from { transform: scale(0.8); opacity: 0.3; } to { transform: scale(1.2); opacity: 0.6; } }
 
-        /* Canvas for Stars/Moon Animation */
-        #cosmic-bg { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
-
-        /* Bento Grid Layout */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 50px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: var(--glass);
-            padding: 30px;
-            border-radius: 25px;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.4s ease, border 0.4s;
-            cursor: pointer;
-        }
-
-        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
-
-        h1, h3 { color: var(--accent); margin-top: 0; }
-
-        .glow-btn {
-            background: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 12px 24px;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-
-        .glow-btn:hover { background: var(--accent); color: #000; box-shadow: 0 0 20px var(--accent); }
-
-        .locked { opacity: 0.4; pointer-events: none; }
+        .container { z-index: 1; display: grid; grid-template-columns: repeat(2, 300px); gap: 20px; }
+        .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 30px; backdrop-filter: blur(30px); transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; }
+        .card:hover { transform: scale(1.05); border-color: var(--gold); background: rgba(255,255,255,0.06); }
+        h1 { color: var(--gold); margin: 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; }
     </style>
 </head>
 <body>
 
-    <canvas id="cosmic-bg"></canvas>
+    <div id="aura"></div>
 
-    <main class="bento-grid">
-        <header class="card hero">
-            <h1>Sanctuary</h1>
-            <p>A digital space for the fragmented. Grounded in presence.</p>
-        </header>
-
-        <section class="card reflection" onclick="rotateQuote()">
-            <h3>Daily Reflection</h3>
-            <p id="quote">"In the silence, we find the path."</p>
+    <main class="container">
+        <section class="card" onclick="alert('Accessing the inner archives...')">
+            <h1>The Portal</h1>
+            <p>Step into silence.</p>
         </section>
-
-        <section class="card altar">
-            <h3>The Altar</h3>
-            <button class="glow-btn" onclick="lightCandle()">Light a Candle</button>
-            <p id="candle-status"></p>
+        <section class="card" onclick="document.body.style.filter = 'invert(1)'">
+            <h1>The Shift</h1>
+            <p>See the world anew.</p>
         </section>
-
-        <section class="card library">
-            <h3>Library</h3>
-            <ul>
-                <li>Guided Breathwork</li>
-                <li>Morning Intention</li>
-                <li class="locked">Shadow Work (Premium)</li>
-            </ul>
+        <section class="card" onclick="window.location.reload()">
+            <h1>The Flow</h1>
+            <p>Sync with the cycle.</p>
+        </section>
+        <section class="card" id="time-card">
+            <h1>The Current</h1>
+            <p id="clock">Loading...</p>
         </section>
     </main>
 
     <script>
-        /* --- COSMIC ANIMATION ENGINE --- */
-        const canvas = document.getElementById('cosmic-bg');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        // Interactive Clock for "The Current"
+        setInterval(() => {
+            document.getElementById('clock').innerText = new Date().toLocaleTimeString();
+        }, 1000);
 
-        const stars = Array.from({length: 250}, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 1.5,
-            opacity: Math.random()
-        }));
-
-        function drawMoon() {
-            ctx.fillStyle = "#f0f0f0";
-            ctx.beginPath();
-            ctx.arc(canvas.width - 100, 100, 40, 0, Math.PI * 2);
-            ctx.fill();
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawMoon();
-            stars.forEach(s => {
-                ctx.fillStyle = `rgba(255,255,255,${s.opacity})`;
-                ctx.beginPath();
-                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-                ctx.fill();
-                s.opacity += (Math.random() - 0.5) * 0.02;
-            });
-            requestAnimationFrame(animate);
-        }
-        animate();
-
-        /* --- INTERACTIVITY --- */
-        function lightCandle() {
-            document.getElementById('candle-status').innerText = "🕯️ Your intention has been placed into the ether.";
-        }
-
-        function rotateQuote() {
-            const quotes = ["Presence is your only power.", "The universe breathes with you.", "Begin again, right here.", "Stillness is the answer."];
-            document.getElementById('quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
-        }
+        // Mouse Parallax Effect
+        document.addEventListener('mousemove', (e) => {
+            const aura = document.getElementById('aura');
+            aura.style.left = (e.clientX - 300) + 'px';
+            aura.style.top = (e.clientY - 300) + 'px';
+        });
     </script>
 </body>
 </html>
