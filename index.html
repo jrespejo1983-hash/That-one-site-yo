@@ -1,57 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyExclusiveArsenal | Paranormal Field Tech</title>
+    <title>VEXØDUSCORE | Play | Compete | Dominate</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Nosifer&display=swap" rel="stylesheet">
     <style>
-        body { background: #050505; color: #00ff41; font-family: 'Orbitron', sans-serif; }
-        .arsenal-card { border: 1px solid #004400; background: rgba(0, 20, 0, 0.4); transition: 0.3s; }
-        .arsenal-card:hover { border-color: #00ff41; box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); }
-        .glitch { font-family: 'Nosifer', cursive; text-shadow: 0 0 10px #00ff41; }
+        body { background-color: #050505; color: #e5e7eb; }
+        .game-frame { aspect-ratio: 16 / 9; width: 100%; border-radius: 8px; }
     </style>
 </head>
-<body class="min-h-screen p-6 md:p-12">
-
-    <header class="mb-12 border-b border-green-900 pb-6">
-        <h1 class="text-5xl glitch tracking-widest uppercase">MyExclusiveArsenal</h1>
-        <p class="text-sm mt-2 tracking-[0.3em] opacity-70">// FIELD EQUIPMENT & PARANORMAL EVIDENCE</p>
-    </header>
-
-    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Equipment Card 1: EMF Meter -->
-        <div class="arsenal-card p-6">
-            <h2 class="text-xl font-bold mb-2">EMF DETECTOR M-500</h2>
-            <p class="text-xs text-green-700 mb-4">STATUS: CALIBRATED</p>
-            <div class="w-full h-32 bg-black border border-green-900 flex items-center justify-center">
-                <span class="animate-pulse">0.2 mG</span>
+<body>
+    <nav class="border-b border-zinc-800 p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-black tracking-widest text-red-600">VEXØDUSCORE</h1>
+            <div class="space-x-6 text-sm uppercase tracking-tighter">
+                <a href="#" class="hover:text-red-500 transition">Library</a>
+                <a href="#" class="hover:text-red-500 transition">Leaderboards</a>
+                <button class="bg-red-600 px-4 py-2 rounded text-white font-bold">Sign In</button>
             </div>
         </div>
+    </nav>
 
-        <!-- Equipment Card 2: Thermal Imaging -->
-        <div class="arsenal-card p-6">
-            <h2 class="text-xl font-bold mb-2">THERMAL IMAGER</h2>
-            <p class="text-xs text-green-700 mb-4">STATUS: ONLINE</p>
-            <div class="w-full h-32 bg-black border border-green-900 flex items-center justify-center">
-                <span class="text-blue-400">72.4 °F</span>
+    <main class="max-w-7xl mx-auto p-6">
+        <header class="py-12 text-center">
+            <h2 class="text-5xl font-bold mb-4">THE VOID AWAITS</h2>
+            <p class="text-zinc-400">High-octane browser gaming, uncompromised.</p>
+        </header>
+
+        <section class="grid md:grid-cols-2 gap-8">
+            <div class="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
+                <iframe src="https://itch.io/embed-upload/XXXXXX?color=333333" class="game-frame" frameborder="0"></iframe>
+                <h3 class="mt-4 text-xl font-semibold">Neon Overdrive</h3>
+                <p class="text-zinc-500 text-sm">Action / Arcade</p>
             </div>
-        </div>
 
-        <!-- Equipment Card 3: EVP Vault -->
-        <div class="arsenal-card p-6 col-span-1 lg:col-span-1">
-            <h2 class="text-xl font-bold mb-2">EVP VAULT</h2>
-            <p class="text-xs text-green-700 mb-4">STATUS: 14 RECORDS</p>
-            <button class="w-full py-2 border border-green-600 hover:bg-green-600 hover:text-black transition">ACCESS ARCHIVE</button>
-        </div>
-
+            <div class="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
+                <iframe src="https://itch.io/embed-upload/XXXXXX?color=333333" class="game-frame" frameborder="0"></iframe>
+                <h3 class="mt-4 text-xl font-semibold">Pulse Protocol</h3>
+                <p class="text-zinc-500 text-sm">Puzzle / Strategy</p>
+            </div>
+        </section>
     </main>
 
-    <footer class="mt-20 pt-10 border-t border-green-900 text-center text-xs opacity-50">
-        &copy; 2026 MYEXCLUSIVEARSENAL | ESTABLISHED FOR INVESTIGATIVE EXCELLENCE
+    <footer class="mt-20 border-t border-zinc-800 py-10 text-center text-zinc-600 text-sm">
+        &copy; 2026 VEXØDUSCORE. All rights reserved.
     </footer>
-
 </body>
 </html>
