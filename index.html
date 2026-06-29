@@ -2,83 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VEXØDUS AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEXØDUS // AI</title>
     <style>
+        /* INDUSTRIAL BRUTALIST AESTHETIC */
         :root {
             --bg: #000000;
-            --border: #333333;
+            --panel: #0a0a0a;
+            --border: #222;
+            --accent: #ff3300;
             --text: #ffffff;
-            --accent: #ff3300; /* High-contrast industrial red */
         }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-            box-sizing: border-box;
+        body { 
+            background: var(--bg); color: var(--text); 
+            font-family: 'Courier New', Courier, monospace; 
+            margin: 0; padding: 20px; height: 100vh; 
+            display: flex; flex-direction: column; 
         }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
+        header { border-bottom: 1px solid var(--border); padding-bottom: 10px; display: flex; justify-content: space-between; }
+        #terminal { flex: 1; overflow-y: auto; padding: 20px 0; color: #888; }
+        .input-zone { border-top: 1px solid var(--border); padding-top: 20px; }
+        input { 
+            width: 100%; background: transparent; color: var(--text); 
+            border: 1px solid var(--border); padding: 15px; 
+            box-sizing: border-box; outline: none; 
         }
-        .brand { font-weight: 800; letter-spacing: 0.1rem; font-size: 1.2rem; }
-        #terminal {
-            flex: 1;
-            overflow-y: auto;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-        .input-zone {
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
-        }
-        input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            color: var(--text);
-            font-size: 1rem;
-            outline: none;
-            font-family: 'Courier New', monospace;
-        }
-        input::placeholder { color: #333; }
+        input:focus { border-color: var(--accent); }
+        .glitch { animation: glitch 1s linear infinite; }
+        @keyframes glitch { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="brand">VEXØDUS // AI</div>
-        <div style="font-size: 0.7rem;">STATUS: ONLINE</div>
+        <div style="font-weight: bold;">VEXØDUS // AI</div>
+        <div class="glitch" style="color: var(--accent);">● ONLINE</div>
     </header>
 
     <div id="terminal">
-        > VEXØDUS system initialized... <br>
-        > Waiting for input...
+        > VEXØDUS ENGINE INITIALIZED...<br>
+        > AWAITING COMMAND INPUT.
     </div>
 
     <div class="input-zone">
-        <input type="text" id="cli" placeholder=">_ Enter command or query" autofocus>
+        <input type="text" id="cli" placeholder=">_ INPUT COMMAND" autofocus>
     </div>
 
     <script>
         const cli = document.getElementById('cli');
         const terminal = document.getElementById('terminal');
 
-        cli.addEventListener('keydown', (e) => {
+        cli.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
-                const query = cli.value;
-                terminal.innerHTML += `<br>> ${query}`;
+                const cmd = cli.value;
+                terminal.innerHTML += `<br><span style="color:#fff">> ${cmd}</span>`;
+                
+                // Simulate processing
+                setTimeout(() => {
+                    terminal.innerHTML += `<br>VEXØDUS: [PROCESSED] Command '${cmd}' acknowledged in the current architecture.`;
+                    terminal.scrollTop = terminal.scrollHeight;
+                }, 500);
+                
                 cli.value = '';
-                // Integration point for your VEXØDUS backend
             }
         });
     </script>
