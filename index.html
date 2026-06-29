@@ -1,73 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEXØDUS // Command Core</title>
+    <title>MyExclusiveArsenal // Command Core</title>
     <style>
-        :root { --bg: #030303; --panel: #0a0a0a; --accent: #00ffcc; --text: #e0e0e0; }
-        body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; display: flex; height: 100vh; overflow: hidden; }
+        :root { --bg: #030303; --accent: #ff3300; --panel: #0a0a0a; --text: #e0e0e0; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; display: flex; height: 100vh; margin: 0; }
         
         /* Layout */
-        nav { width: 80px; border-right: 1px solid #1a1a1a; display: flex; flex-direction: column; align-items: center; padding: 20px 0; gap: 30px; }
-        main { flex: 1; display: grid; grid-template-rows: auto 1fr auto; padding: 30px; gap: 20px; }
+        aside { width: 300px; border-right: 1px solid #1a1a1a; padding: 30px; display: flex; flex-direction: column; gap: 20px; }
+        main { flex: 1; display: grid; grid-template-rows: 1fr auto; padding: 30px; gap: 20px; }
         
-        /* Dashboard Header */
-        header { display: flex; justify-content: space-between; align-items: center; background: var(--panel); padding: 20px; border-radius: 12px; border: 1px solid #1a1a1a; }
-        .stat { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Main Chat Window */
-        #chat-stream { flex: 1; background: var(--panel); border-radius: 12px; padding: 25px; overflow-y: auto; border: 1px solid #1a1a1a; }
+        /* Arsenal Components */
+        .edition-card { padding: 15px; border: 1px solid #222; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .edition-card:hover { border-color: var(--accent); }
         
-        /* Command Input */
-        .input-bar { background: var(--panel); padding: 20px; border-radius: 12px; border: 1px solid #1a1a1a; display: flex; gap: 15px; }
-        input { flex: 1; background: none; border: none; color: white; font-size: 1rem; outline: none; }
-        .btn { padding: 10px 20px; background: var(--accent); color: black; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        /* Interactive Chat */
+        #core { flex: 1; background: var(--panel); border-radius: 12px; padding: 25px; overflow-y: auto; border: 1px solid #1a1a1a; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div style="font-weight: 800; color: var(--accent);">V</div>
-        <div style="color: #444;">◈</div>
-        <div style="color: #444;">◓</div>
-    </nav>
+    <aside>
+        <h2 style="color: var(--accent);">MY EXCLUSIVE ARSENAL</h2>
+        <div id="arsenal-list">
+            <!-- Dynamically populate your 11+ Editions here -->
+            <div class="edition-card">001 // Modern Executive</div>
+            <div class="edition-card">002 // VEXØDUS Archive</div>
+            <div class="edition-card">003 // GhostLink Foundation</div>
+        </div>
+    </aside>
 
     <main>
-        <header>
-            <div>
-                <h1 style="margin:0; font-size: 1.2rem;">COMMAND CORE // JRay</h1>
-                <div class="stat">System Online / Autonomous Mode</div>
-            </div>
-            <div class="stat">Node: East-Milton-01</div>
-        </header>
-
-        <div id="chat-stream">
-            <div style="color: var(--accent); font-family: monospace;">> VEXØDUS system verified. Knowledge Base indexed. Ready for input.</div>
+        <div id="core">
+            <div style="color: var(--accent);">[SYSTEM READY] MyExclusiveArsenal is live. Query or Select Edition to begin.</div>
         </div>
-
-        <div class="input-bar">
-            <input type="text" id="cli" placeholder="Transmit command sequence...">
-            <button class="btn" onclick="sendCommand()">EXECUTE</button>
-        </div>
+        <input type="text" id="cli" style="background:var(--panel); border:1px solid #222; padding:20px; color:white; border-radius:8px;" placeholder=">_ AWAITING COMMAND...">
     </main>
-
-    <script>
-        function sendCommand() {
-            const input = document.getElementById('cli');
-            const stream = document.getElementById('chat-stream');
-            if (!input.value) return;
-
-            stream.innerHTML += `<div style="margin: 10px 0;"><b>You:</b> ${input.value}</div>`;
-            
-            // --- AI PLUG-IN POINT ---
-            // Here you will call your Vercel/OpenAI endpoint
-            console.log("Connect your AI API to this function.");
-            // ------------------------
-            
-            input.value = '';
-            stream.scrollTop = stream.scrollHeight;
-        }
-    </script>
 </body>
 </html>
