@@ -3,62 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PARANORMAL OPS | FIELD HQ</title>
+    <title>MyExclusiveArsenal | Paranormal Field Tech</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Nosifer&display=swap" rel="stylesheet">
     <style>
-        body { background: radial-gradient(circle, #0a1a0a 0%, #000000 100%); color: #22c55e; }
-        .glitch-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/noise-lines.png'); opacity: 0.05; pointer-events: none; z-index: 10; }
-        .hud-border { border: 1px solid #14532d; }
-        .nosifer { font-family: 'Nosifer', cursive; text-shadow: 0 0 15px #22c55e; }
-        .orbitron { font-family: 'Orbitron', sans-serif; }
+        body { background: #050505; color: #00ff41; font-family: 'Orbitron', sans-serif; }
+        .arsenal-card { border: 1px solid #004400; background: rgba(0, 20, 0, 0.4); transition: 0.3s; }
+        .arsenal-card:hover { border-color: #00ff41; box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); }
+        .glitch { font-family: 'Nosifer', cursive; text-shadow: 0 0 10px #00ff41; }
     </style>
 </head>
-<body class="min-h-screen overflow-x-hidden">
-    <div class="glitch-overlay"></div>
+<body class="min-h-screen p-6 md:p-12">
 
-    <header class="p-8 border-b border-green-900 flex justify-between items-center z-20 relative">
-        <h1 class="text-4xl nosifer tracking-widest">PARANORMAL OPS</h1>
-        <nav class="space-x-8 orbitron">
-            <button onclick="nav('map')" class="hover:text-white transition">INVESTIGATION MAP</button>
-            <button onclick="nav('vault')" class="hover:text-white transition">EVIDENCE VAULT</button>
-        </nav>
+    <header class="mb-12 border-b border-green-900 pb-6">
+        <h1 class="text-5xl glitch tracking-widest uppercase">MyExclusiveArsenal</h1>
+        <p class="text-sm mt-2 tracking-[0.3em] opacity-70">// FIELD EQUIPMENT & PARANORMAL EVIDENCE</p>
     </header>
 
-    <main id="app" class="p-10 max-w-6xl mx-auto z-20 relative">
-        <section id="map">
-            <h2 class="text-2xl orbitron mb-6">// ACTIVE SECTOR SCAN</h2>
-            <div class="w-full h-96 hud-border bg-gray-900 flex items-center justify-center opacity-80 hover:opacity-100 transition duration-500">
-                <p class="text-green-800 animate-pulse">[SYSTEM: AWAITING COORDINATES...]</p>
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Equipment Card 1: EMF Meter -->
+        <div class="arsenal-card p-6">
+            <h2 class="text-xl font-bold mb-2">EMF DETECTOR M-500</h2>
+            <p class="text-xs text-green-700 mb-4">STATUS: CALIBRATED</p>
+            <div class="w-full h-32 bg-black border border-green-900 flex items-center justify-center">
+                <span class="animate-pulse">0.2 mG</span>
             </div>
-        </section>
+        </div>
 
-        <section id="vault" class="hidden">
-            <h2 class="text-2xl orbitron mb-6">// CLASSIFIED EVIDENCE LOG</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="hud-border p-6 hover:bg-green-900/20 cursor-pointer transition">
-                    <h3 class="font-bold">EVT-001: EVP RECORDING</h3>
-                    <p class="text-sm text-green-700 mt-2">Location: Abandoned Asylum</p>
-                </div>
-                <div class="hud-border p-6 hover:bg-green-900/20 cursor-pointer transition">
-                    <h3 class="font-bold">EVT-002: EMF ANOMALY</h3>
-                    <p class="text-sm text-green-700 mt-2">Location: Residential Site B</p>
-                </div>
+        <!-- Equipment Card 2: Thermal Imaging -->
+        <div class="arsenal-card p-6">
+            <h2 class="text-xl font-bold mb-2">THERMAL IMAGER</h2>
+            <p class="text-xs text-green-700 mb-4">STATUS: ONLINE</p>
+            <div class="w-full h-32 bg-black border border-green-900 flex items-center justify-center">
+                <span class="text-blue-400">72.4 °F</span>
             </div>
-        </section>
+        </div>
+
+        <!-- Equipment Card 3: EVP Vault -->
+        <div class="arsenal-card p-6 col-span-1 lg:col-span-1">
+            <h2 class="text-xl font-bold mb-2">EVP VAULT</h2>
+            <p class="text-xs text-green-700 mb-4">STATUS: 14 RECORDS</p>
+            <button class="w-full py-2 border border-green-600 hover:bg-green-600 hover:text-black transition">ACCESS ARCHIVE</button>
+        </div>
+
     </main>
 
-    <script>
-        function nav(id) {
-            document.getElementById('map').classList.add('hidden');
-            document.getElementById('vault').classList.add('hidden');
-            document.getElementById(id).classList.remove('hidden');
-        }
-        
-        // Ghostly log effect
-        setInterval(() => {
-            console.log(`%c[SYSTEM] EMF Fluctuating...`, "color: #22c55e; font-family: monospace;");
-        }, 5000);
-    </script>
+    <footer class="mt-20 pt-10 border-t border-green-900 text-center text-xs opacity-50">
+        &copy; 2026 MYEXCLUSIVEARSENAL | ESTABLISHED FOR INVESTIGATIVE EXCELLENCE
+    </footer>
+
 </body>
 </html>
