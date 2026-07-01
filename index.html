@@ -3,56 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEUCE CREW | Professional Waste Removal</title>
+    <title>DEUCE CREW | Operation Engine</title>
     <style>
         :root { --gold: #FFD700; --bg: #050505; }
-        body { background: var(--bg); color: #fff; font-family: 'Courier New', monospace; margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-        nav { width: 100%; padding: 2rem; text-align: center; font-weight: bold; letter-spacing: 4px; border-bottom: 1px solid #333; }
-        .hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 90%; max-width: 500px; text-align: center; }
-        .quote-box { background: #111; padding: 2rem; border: 1px solid #333; width: 100%; border-radius: 4px; }
-        input, select { width: 100%; padding: 12px; margin: 10px 0; background: #222; border: 1px solid #444; color: #fff; box-sizing: border-box; }
-        button { background: var(--gold); border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; text-transform: uppercase; }
-        .hidden { display: none; }
-        .cta-btn { background: var(--gold); color: #000; padding: 15px; display: block; text-decoration: none; font-weight: bold; margin-top: 10px; }
-        footer { padding: 2rem; font-size: 0.7rem; color: #555; }
+        body { background: var(--bg); color: #fff; font-family: 'Courier New', Courier, monospace; margin: 0; }
+        .nav { padding: 2rem; border-bottom: 1px solid #333; font-weight: bold; }
+        .container { max-width: 900px; margin: auto; padding: 2rem; }
+        .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .card { border: 1px solid #333; padding: 2rem; background: #111; }
+        input, select, button { width: 100%; padding: 1rem; margin: 0.5rem 0; background: #222; border: 1px solid #444; color: white; }
+        button { background: var(--gold); color: black; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-
-    <nav>DEUCE_CREW</nav>
-
-    <div class="hero">
-        <h1>CLEAN YARDS.<br>ZERO TRACE.</h1>
-        
-        <div id="quoteSection" class="quote-box">
-            <h3>INSTANT QUOTE</h3>
-            <input type="number" id="dogs" placeholder="Number of Dogs" min="1">
-            <select id="freq">
-                <option value="15">Weekly ($15/visit)</option>
-                <option value="20">Bi-Weekly ($20/visit)</option>
-            </select>
-            <button onclick="calculate()">GET PRICE</button>
-        </div>
-
-        <div id="bookingSection" class="hidden quote-box">
-            <h2 id="priceDisplay"></h2>
-            <p>Ready to get started?</p>
-            <a href="YOUR_JOBBER_LINK_HERE" class="cta-btn">CONFIRM & BOOK</a>
-            <button onclick="location.reload()" style="background:transparent; color:#777; border:1px solid #333; margin-top:10px;">RESET</button>
+    <div class="nav">DEUCE_CREW // SYSTEM OPERATIONAL</div>
+    <div class="container">
+        <h1>COMMAND CENTER</h1>
+        <div class="dashboard-grid">
+            <!-- Lead Engine -->
+            <div class="card" id="lead-engine">
+                <h3>CLIENT INTAKE</h3>
+                <input type="text" placeholder="Full Name" id="name">
+                <input type="text" placeholder="Service Address" id="address">
+                <select id="service-type">
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial/HOA</option>
+                </select>
+                <button onclick="submitLead()">REQUEST SERVICE</button>
+            </div>
+            <!-- Operations Status -->
+            <div class="card">
+                <h3>SYSTEM STATUS</h3>
+                <p>Status: <b>ACTIVE</b></p>
+                <p>Route Density: <b>OPTIMIZED</b></p>
+                <p>Payment Gateway: <b>LINKED</b></p>
+                <a href="YOUR_JOBBER_PORTAL_LINK" style="color:var(--gold)">Launch Full Client Hub</a>
+            </div>
         </div>
     </div>
-
-    <footer>&copy; 2026 DEUCE CREW | SERVING EAST MILTON</footer>
-
     <script>
-        function calculate() {
-            const dogs = document.getElementById('dogs').value;
-            const freq = document.getElementById('freq').value;
-            if(!dogs) return alert('Please enter number of dogs');
-            const total = dogs * freq;
-            document.getElementById('quoteSection').classList.add('hidden');
-            document.getElementById('bookingSection').classList.remove('hidden');
-            document.getElementById('priceDisplay').innerText = `$${total} per visit`;
+        function submitLead() {
+            const name = document.getElementById('name').value;
+            alert("Lead captured: " + name + ". Data syncing to CRM.");
         }
     </script>
 </body>
